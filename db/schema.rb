@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_31_220318) do
+ActiveRecord::Schema.define(version: 2018_11_05_210643) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2018_10_31_220318) do
     t.bigint "companies_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "apply_date"
     t.index ["companies_id"], name: "index_jobs_on_companies_id"
   end
 
