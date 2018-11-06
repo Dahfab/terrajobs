@@ -8,8 +8,15 @@ class JobsController < ActionController::Base
     end
 
     def create 
+        @job = Job.new(job_params) 
+        if @job.save 
+            flash[:notice] = "Job angelegt!" 
+            redirect_to :root
+        else
+            render action: :new
+        end
     end
-
+    
     def edit 
     end
 
@@ -17,5 +24,10 @@ class JobsController < ActionController::Base
     end
 
     def destroy 
+    end
+
+    private
+    def job_params
+      params.require(:job).permit(:position, :description, :responsibilities, :requirements, :offers, :how_to_apply, :apply_url, :apply_mail, :apply_date)
     end
 end

@@ -2,6 +2,15 @@
 
 = link_to("Neuen Job posten", job_inserieren_path)
 
+%ul
 - @jobs.each do |job|
-    = job.position
-    = job.description
+    %li= job.position
+    %li= job.description
+    %li= job.responsibilities
+    %li= job.requirements
+    %li= job.offers
+    %li= job.how_to_apply
+    %li= job.apply_url
+    %li= job.apply_mail
+    %li= job.apply_date
+    %br/
