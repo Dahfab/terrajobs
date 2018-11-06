@@ -1,1 +1,7 @@
-<h1>Hallo Welt</h1>
+%h1 Alle Jobs
+
+= link_to("Neuen Job posten", job_inserieren_path)
+
+- @jobs.each do |job|
+    = job.position
+    = job.description
