@@ -1,32 +1,26 @@
 %h1 Neuen Job inserieren
 
-= form_for @job do |f|
-    = f.label("Position")
-    = f.text_field(:position) 
+= link_to("zurück", :root)
+
+= simple_form_for @job do |f|
+    = f.input :position, label: "Position"
     %br/
-    = f.label("Beschreibung")
-    = f.text_area(:description)
+    = f.input :description, :as => :text, label: "Beschreibung"
     %br/
-    = f.label("Aufgaben")
-    = f.text_area(:responsibilities)
+    = f.input :responsibilities, :as => :text, label: "Aufgaben"
     %br/
-    = f.label("Anforderungen")
-    = f.text_area(:requirements)
+    = f.input :requirements, :as => :text, label: "Anforderungen" 
     %br/ 
-    = f.label("Wir bieten")
-    = f.text_area(:offers)
+    = f.input :offers, :as => :text, label: "Wir bieten" 
     %br/ 
-    = f.label("Wie du dich bewirbst")
-    = f.text_area(:how_to_apply)
+    = f.input :how_to_apply, :as => :text, label: "Wie du dich bewirbst"
     %br/
-    = f.label("Bewerbungs Link")
-    = f.text_field(:apply_url)
+    = f.input :apply_url, label: "Bewerbungs URL"
     %br/ 
-    = f.label("E-Mail")
-    = f.text_field(:apply_mail)
+    = f.input :apply_mail, label: "Bewerbungs E-Mail"
     %br/ 
-    = f.label("Bewerbungsschluss")
-    = f.date_select(:apply_date)
+    = f.label :apply_date, "Bewerbungsschluss"
+    = f.date_select :apply_date
     %br/ 
     = submit_tag "Senden"
 
