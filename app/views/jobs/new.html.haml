@@ -1,0 +1,32 @@
+%h1 Neuen Job inserieren
+
+= form_for @job do |f|
+    = f.label("Position")
+    = f.text_field(:position) 
+    %br/
+    = f.label("Beschreibung")
+    = f.text_area(:description)
+    %br/
+    = f.label("Aufgaben")
+    = f.text_area(:responsibilities)
+    %br/
+    = f.label("Anforderungen")
+    = f.text_area(:requirements)
+    %br/ 
+    = f.label("Wir bieten")
+    = f.text_area(:offers)
+    %br/ 
+    = f.label("Wie du dich bewirbst")
+    = f.text_area(:how_to_apply)
+    %br/
+    = f.label("Bewerbungs Link")
+    = f.text_field(:apply_url)
+    %br/ 
+    = f.label("E-Mail")
+    = f.text_field(:apply_mail)
+    %br/ 
+    = f.label("Bewerbungsschluss")
+    = f.date_select(:apply_date)
+    %br/ 
+    = submit_tag "Senden"
+
