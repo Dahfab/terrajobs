@@ -1,25 +1,33 @@
-%h1 Alle Jobs
+#page-wrapper
+    %header#header
+        %nav.main-nav
 
-= link_to("Neuen Job posten", job_inserieren_path)
+    #main   
+        %section#hero
+            %h1 Alle Jobs
+            = link_to("Neuen Job posten", job_inserieren_path)
 
-%ul
-- @jobs.each do |job|
-    - unless job.position.blank?
-        %li= job.position
-    - unless job.description.blank?
-        %li= job.description
-    - unless job.responsibilities.blank?
-        %li= job.responsibilities
-    - unless job.requirements.blank?
-        %li= job.requirements
-    - unless job.offers.blank?
-        %li= job.offers
-    - unless job.how_to_apply.blank?
-        %li= job.how_to_apply
-    - unless job.apply_url.blank?
-        %li= job.apply_url
-    - unless job.apply_mail.blank?
-        %li= job.apply_mail
-    - unless job.apply_date.blank?
-        %li= job.apply_date
-    %br/
+        %section#categories
+            .grid-container
+                .item-1
+                .item-2
+                .item-3
+                .item-4
+                .item-5
+                .item-6
+
+        %section#search
+
+        %section#job-listings
+            .container
+                - @jobs.each do |job|
+                    %h2= link_to("#{job.position}", job_path(job))
+
+        %section#siteinfo
+
+    %footer#footer
+        .grid-container
+            .item-1
+            .item-2
+            .item-3
+            .item-4

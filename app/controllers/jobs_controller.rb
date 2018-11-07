@@ -1,6 +1,5 @@
 class JobsController < ActionController::Base
     def index 
-
     end
 
     def new 
@@ -16,7 +15,11 @@ class JobsController < ActionController::Base
             render action: :new
         end
     end
-    
+
+    def show
+        @job = Job.find(params[:id]) 
+    end
+
     def edit 
     end
 
