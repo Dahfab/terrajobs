@@ -23,7 +23,7 @@ html, body {
 }
 
 h1, h2, h3, h4 {
-    margin: 0px;
+    margin: 0px 0px 20px 0px;
     padding: 0px;
 }
 
@@ -41,19 +41,15 @@ h1, h2, h3, h4 {
 #header {
     padding: $site-padding;
     height: 50px;
-    background-color: black;
 }
 
 #main {
     padding: $site-padding;
     flex-grow: 1;
-    background-color: cornflowerblue;
     #hero {
-        background-color: beige;
         height: 80px;
     }
     #categories {
-        background-color: aqua;
         height: 100px;
         .grid-container {
             height: 100%;
@@ -62,25 +58,30 @@ h1, h2, h3, h4 {
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
             grid-column-gap: 20px;
             .item-1, .item-2, .item-3, .item-4, .item-5, .item-6 {
-                background-color: brown;
+                
             }
         }
     }
     #search {}
-    #job-listings {}
+    #job-listings {
+        .container {
+            display:flex;
+            flex-flow: column;
+            align-items: center;
+        }
+    }
     #siteinfo {}
 }
 
 #footer {
     padding: $site-padding;
     height: 100px;
-    background-color: antiquewhite;
     .grid-container {
         height: 100%;
         display: grid;
         grid-template-columns: 50% 1fr 1fr 1fr;
         .item-1, .item-2, .item-3, .item-4 {
-            background-color: yellowgreen;
+        
         }
     }
 }

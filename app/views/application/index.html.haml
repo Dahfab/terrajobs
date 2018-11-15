@@ -1,33 +1,6 @@
-#page-wrapper
-    %header#header
-        %nav.main-nav
-
-    #main   
-        %section#hero
-            %h1 Alle Jobs
-            = link_to("Neuen Job posten", job_inserieren_path)
-
-        %section#categories
-            .grid-container
-                .item-1
-                .item-2
-                .item-3
-                .item-4
-                .item-5
-                .item-6
-
-        %section#search
-
-        %section#job-listings
-            .container
-                - @jobs.each do |job|
-                    %h2= link_to("#{job.position}", job_path(job))
-
-        %section#siteinfo
-
-    %footer#footer
-        .grid-container
-            .item-1
-            .item-2
-            .item-3
-            .item-4
+%h1 Alle Jobs
+= link_to("Neuen Job posten", job_inserieren_path)
+%br/
+%br/
+- @jobs.each do |job|
+    %h2= link_to("#{job.position}", job_path(job))

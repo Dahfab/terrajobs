@@ -3,5 +3,5 @@ Rails.application.routes.draw do
     root to: "application#index"
 
     get "/job-inserieren", to: "jobs#new"
-    resources :jobs, except: [:new]
+    resources :jobs, except: [:new], path: ""
 end
