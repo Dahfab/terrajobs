@@ -23,7 +23,7 @@
     = f.label :apply_date, "Bewerbungsschluss"
     = f.date_select :apply_date
     %br/ 
-    = f.simple_fields_for @company do |c|
+    = f.simple_fields_for :company do |c|
         = c.input :name, label: "Firmenname"
         %br/
         = c.input :mail, label: "E-Mail Adresse"

@@ -4,12 +4,12 @@ class JobsController < ActionController::Base
 
     def new 
         @job = Job.new
-        @company = @job.build_company
+        @job.build_company
     end
 
     def create 
         @job = Job.new(job_params)
-        @company = @job.create_company
+        @job.create_company(job_params[:company_attributes])
         if @job.save 
             flash[:notice] = "Job angelegt!" 
             redirect_to :root
@@ -20,7 +20,7 @@ class JobsController < ActionController::Base
 
     def show
         @job = Job.find(params[:id])
-       # @company = @job.build_company
+        @company = @job.company
     end
 
     def edit 
