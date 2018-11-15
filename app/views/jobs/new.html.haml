@@ -22,5 +22,8 @@
     = f.label :apply_date, "Bewerbungsschluss"
     = f.date_select :apply_date
     %br/ 
+
+    = simple_fields_for :company do |c|
+        = c.input :name, label: "Firmenname"
     = submit_tag "Senden"
 

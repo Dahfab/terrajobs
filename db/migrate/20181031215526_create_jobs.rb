@@ -10,7 +10,7 @@ class CreateJobs < ActiveRecord::Migration[5.2]
         t.string :apply_url
         t.string :apply_mail
         
-        t.references :companies
+        t.references :company
         t.timestamps
     end
   end

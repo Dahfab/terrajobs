@@ -1,2 +1,36 @@
 %h1= @job.position
+= link_to("zurück", :root)
+%br/
+%br/
+%b Firma:
+//%p= @company.name
+%br/
+%br/
+
+
+%b Beschreibung:
+%p= @job.description
+%br/
+
+%b Aufgaben:
+%p= @job.responsibilities
+%br/
+
+%b Anforderungen:
+%p= @job.requirements
+%br/
+
+%b Wir bieten:
+%p= @job.offers 
+%br/
+
+%b Wie Sie sich bewerben:
+%p= @job.how_to_apply
+%br/
+
+%b Bewerbungsschluss:
+%span= @job.apply_date
+
+
+
 

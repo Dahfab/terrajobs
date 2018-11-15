@@ -8,7 +8,6 @@ class CreateCompanies < ActiveRecord::Migration[5.2]
         t.decimal :company_lat, precision: 10, scale: 6
         t.decimal :company_long, precision: 10, scale: 6
 
-        t.references :jobs
         t.timestamps
     end
   end

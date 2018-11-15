@@ -22,10 +22,8 @@ ActiveRecord::Schema.define(version: 2018_11_05_210643) do
     t.string "twitter_url"
     t.decimal "company_lat", precision: 10, scale: 6
     t.decimal "company_long", precision: 10, scale: 6
-    t.bigint "jobs_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["jobs_id"], name: "index_companies_on_jobs_id"
   end
 
   create_table "jobs", force: :cascade do |t|
@@ -37,11 +35,11 @@ ActiveRecord::Schema.define(version: 2018_11_05_210643) do
     t.text "how_to_apply"
     t.string "apply_url"
     t.string "apply_mail"
-    t.bigint "companies_id"
+    t.bigint "company_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date "apply_date"
-    t.index ["companies_id"], name: "index_jobs_on_companies_id"
+    t.index ["company_id"], name: "index_jobs_on_company_id"
   end
 
 end

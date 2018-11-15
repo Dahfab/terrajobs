@@ -4,6 +4,7 @@ class JobsController < ActionController::Base
 
     def new 
         @job = Job.new
+        @company = @job.build_company
     end
 
     def create 
