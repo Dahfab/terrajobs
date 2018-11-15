@@ -14,6 +14,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'haml', '~> 5.0', '>= 5.0.4'
 gem "haml-rails", "~> 1.0"
 gem 'simple_form', '~> 4.0', '>= 4.0.1'
+gem 'friendly_id', '~> 5.2', '>= 5.2.4'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes

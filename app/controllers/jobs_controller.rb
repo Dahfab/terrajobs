@@ -19,7 +19,7 @@ class JobsController < ActionController::Base
     end
 
     def show
-        @job = Job.find(params[:id])
+        @job = Job.friendly.find(params[:id])
         @company = @job.company
     end
 

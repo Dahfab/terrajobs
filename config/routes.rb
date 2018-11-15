@@ -4,5 +4,5 @@ Rails.application.routes.draw do
 
     get "/job-inserieren", to: "jobs#new"
     resources :jobs, except: [:new]
-    resources :companies, path: ""
+    resources :companies
 end
