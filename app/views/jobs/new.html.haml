@@ -2,7 +2,10 @@
 
 = link_to("zurück", :root)
 
+
+
 = simple_form_for @job do |f|
+    = render "shared/error_messages", :target => @job
     = f.input :position, label: "Position"
     %br/
     = f.input :description, :as => :text, label: "Beschreibung"
@@ -22,8 +25,9 @@
     = f.label :apply_date, "Bewerbungsschluss"
     = f.date_select :apply_date
     %br/ 
-
-    = simple_fields_for :company do |c|
+    = f.simple_fields_for @company do |c|
         = c.input :name, label: "Firmenname"
+        %br/
+        = c.input :mail, label: "E-Mail Adresse"
     = submit_tag "Senden"
 

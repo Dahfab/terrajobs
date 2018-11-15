@@ -8,7 +8,8 @@ class JobsController < ActionController::Base
     end
 
     def create 
-        @job = Job.new(job_params) 
+        @job = Job.new(job_params)
+        @company = @job.create_company(company_params)
         if @job.save 
             flash[:notice] = "Job angelegt!" 
             redirect_to :root
@@ -18,7 +19,8 @@ class JobsController < ActionController::Base
     end
 
     def show
-        @job = Job.find(params[:id]) 
+        @job = Job.find(params[:id])
+       # @company = @job.build_company
     end
 
     def edit 
@@ -32,6 +34,31 @@ class JobsController < ActionController::Base
 
     private
     def job_params
-      params.require(:job).permit(:position, :description, :responsibilities, :requirements, :offers, :how_to_apply, :apply_url, :apply_mail, :apply_date)
+        params.require(:job).permit(
+        :position, 
+        :description, 
+        :responsibilities, 
+        :requirements, 
+        :offers, 
+        :how_to_apply, 
+        :apply_url, 
+        :apply_mail, 
+        :apply_date, 
+        :company_id
+        #company_attributes: [:id, :name, :mail, :facebook_url, :twitter_url] 
+        )
     end
+
+    def company_params
+        params.permit(
+        :name, 
+        :mail, 
+        :facebook_url, 
+        :twitter_url
+        )
+    end
+
+  #  def company_params
+  #      params.permit(:name, :mail, :facebook_url, :twitter_url, :job_id)
+  #  end
 end

@@ -22,8 +22,10 @@ ActiveRecord::Schema.define(version: 2018_11_05_210643) do
     t.string "twitter_url"
     t.decimal "company_lat", precision: 10, scale: 6
     t.decimal "company_long", precision: 10, scale: 6
+    t.bigint "job_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["job_id"], name: "index_companies_on_job_id"
   end
 
   create_table "jobs", force: :cascade do |t|
