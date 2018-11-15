@@ -2,8 +2,6 @@
 
 = link_to("zurück", :root)
 
-
-
 = simple_form_for @job do |f|
     = render "shared/error_messages", :target => @job
     = f.input :position, label: "Position"
