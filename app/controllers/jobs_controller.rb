@@ -5,6 +5,7 @@ class JobsController < ActionController::Base
     def new 
         @job = Job.new
         @job.build_company
+        @categories = Category.all
     end
 
     def create 
@@ -21,6 +22,7 @@ class JobsController < ActionController::Base
     def show
         @job = Job.friendly.find(params[:id])
         @company = @job.company
+        @category = Category.find(@job.category_id)
     end
 
     def edit 
@@ -44,6 +46,7 @@ class JobsController < ActionController::Base
         :apply_url, 
         :apply_mail, 
         :apply_date,
+        :category_id,
         company_attributes: [:id, :_destroy, :company_id, :name, :mail, :facebook_url, :twitter_url] 
         )
     end
