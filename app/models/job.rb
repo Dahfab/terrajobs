@@ -1,5 +1,6 @@
 class Job < ApplicationRecord
    belongs_to :company, optional: true
+   has_one :category
 
    extend FriendlyId
    friendly_id :slug_candidates, use: :slugged
