@@ -3,6 +3,6 @@ class CategoriesController < ActionController::Base
     end
 
     def show
-        @category = Category.friendly.find(params[:id]) 
+        @category = Category.find_by_friendly_id(params[:id]) 
     end
 end
