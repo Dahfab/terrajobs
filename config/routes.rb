@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 
     get "/job-inserieren", to: "jobs#new"
     resources :jobs, except: [:new]
-    resources :companies
-    resources :categories, path: "", only: :show, constraints: { id: /(gis|geographie|geologie|vermessung|green|sonstige)\-jobs/ }
+    resources :companies, path:"/unternehmen"
+    resources :categories, path: "", only: :show, id: :slug
 end
