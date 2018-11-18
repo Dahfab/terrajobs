@@ -23,6 +23,13 @@ class JobsController < ActionController::Base
         @job = Job.friendly.find(params[:id])
         @company = @job.company
         @category = Category.find(@job.category_id)
+       
+        @before_url = URI(request.referrer).path 
+        if @before_url =~ /\/jobs\/(.+)/
+            @before_url = root_path 
+        else
+            @before_url = request.referrer
+        end
     end
 
     def edit 

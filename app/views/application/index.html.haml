@@ -2,5 +2,9 @@
 = link_to("Neuen Job posten", job_inserieren_path)
 %br/
 %br/
+- @category.each do |category|
+    %span= link_to("#{category.name}", category_path(category))
+%br/
+%br/
 - @jobs.each do |job|
     %h2= link_to("#{job.position}", job_path(job))
