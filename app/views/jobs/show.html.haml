@@ -1,12 +1,12 @@
 %h1= @job.position
-= link_to("zurück", @before_url)
+= link_to("zurück", @previous_url)
 %br/
 %br/
 %b Firma:
-%span= @company.name
+%span= @job.company.name
 %br/
 %b E-Mail:
-%span= @company.mail
+%span= @job.company.mail
 %br/
 %br/
 %b Beschreibung:

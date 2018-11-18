@@ -1,11 +1,13 @@
 class JobsController < ActionController::Base
+    before_action :initialize_categories, only: :new
+
+
     def index 
     end
 
     def new 
         @job = Job.new
         @job.build_company
-        @categories = Category.all
     end
 
     def create 
@@ -21,15 +23,9 @@ class JobsController < ActionController::Base
 
     def show
         @job = Job.friendly.find(params[:id])
-        @company = @job.company
         @category = Category.find(@job.category_id)
-       
-        @before_url = URI(request.referrer).path 
-        if @before_url =~ /\/jobs\/(.+)/
-            @before_url = root_path 
-        else
-            @before_url = request.referrer
-        end
+        @previous_url = URI(request.referrer).path 
+        save_previous_url
     end
 
     def edit 
@@ -40,8 +36,13 @@ class JobsController < ActionController::Base
 
     def destroy 
     end
+    
 
     private
+    def initialize_categories
+        @categories = Category.all
+    end
+
     def job_params
         params.require(:job).permit(
         :position, 
@@ -58,4 +59,11 @@ class JobsController < ActionController::Base
         )
     end
 
+    def save_previous_url
+        if @previous_url =~ /\/jobs\/(.+)/
+            @previous_url = root_path 
+        else
+            @previous_url = request.referrer
+        end
+    end
 end
