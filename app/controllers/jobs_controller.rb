@@ -1,7 +1,6 @@
 class JobsController < ActionController::Base
     before_action :initialize_categories, only: :new
 
-
     def index 
     end
 
@@ -25,7 +24,7 @@ class JobsController < ActionController::Base
         @job = Job.friendly.find(params[:id])
         @category = Category.find(@job.category_id)
         @previous_url = URI(request.referrer).path 
-        save_previous_url
+        create_previous_url
     end
 
     def edit 
@@ -59,8 +58,8 @@ class JobsController < ActionController::Base
         )
     end
 
-    def save_previous_url
-        if @previous_url =~ /\/jobs\/(.+)/
+    def create_previous_url
+        if @previous_url =~ /\/(.+)\/(.+)/i
             @previous_url = root_path 
         else
             @previous_url = request.referrer

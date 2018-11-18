@@ -5,10 +5,8 @@ class Category < ApplicationRecord
     friendly_id :name_and_addon, use: [:slugged, :finders]
 
     def name_and_addon
-        if name == "Green-Jobs"
+        if name =~ /(.+)-Jobs/i
             "#{name}"
-        elsif name == "Vermessung"
-            "#{name}s-jobs"
         else
             "#{name}-jobs"
         end
