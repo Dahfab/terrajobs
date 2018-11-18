@@ -7,6 +7,8 @@ class Category < ApplicationRecord
     def name_and_addon
         if name == "Green-Jobs"
             "#{name}"
+        elsif name == "Vermessung"
+            "#{name}s-jobs"
         else
             "#{name}-jobs"
         end
