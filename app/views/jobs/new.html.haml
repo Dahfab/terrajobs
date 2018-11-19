@@ -36,5 +36,10 @@
         = c.input :name, label: "Firmenname"
         %br/
         = c.input :mail, label: "E-Mail Adresse"
+        %br/
+        = c.label :logo, "Firmenlogo"
+        = c.file_field :logo
+        %br/
+        %br/
     = submit_tag "Senden"
 
