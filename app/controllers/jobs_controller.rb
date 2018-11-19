@@ -1,5 +1,5 @@
 class JobsController < ActionController::Base
-    before_action :initialize_categories, only: :new
+    before_action :initialize, only: :new
 
     def index 
     end
@@ -23,6 +23,7 @@ class JobsController < ActionController::Base
     def show
         @job = Job.friendly.find(params[:id])
         @category = Category.find(@job.category_id)
+        @type = Type.find(@job.type_id)
         @previous_url = URI(request.referrer).path 
         create_previous_url
     end
@@ -38,8 +39,9 @@ class JobsController < ActionController::Base
     
 
     private
-    def initialize_categories
+    def initialize
         @categories = Category.all
+        @types = Type.all
     end
 
     def job_params
@@ -54,6 +56,7 @@ class JobsController < ActionController::Base
         :apply_mail, 
         :apply_date,
         :category_id,
+        :type_id,
         company_attributes: [:id, :_destroy, :company_id, :name, :mail, :facebook_url, :twitter_url] 
         )
     end

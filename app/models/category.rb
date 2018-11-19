@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
-    has_many :job
+    has_many :jobs
 
     extend FriendlyId
     friendly_id :name_and_addon, use: [:slugged, :finders]

@@ -24,8 +24,12 @@
     = f.date_select :apply_date
     %br/ 
     %br/
-    = f.label :category_id, "Hauptkategorie"
+    = f.label :category_id, "Kategorie"
     = f.select :category_id, @categories.map { |c| [c.name, c.id] }
+    %br/ 
+    %br/
+    = f.label :type_id, "Art"
+    = f.select :type_id, @types.map { |c| [c.name, c.id] }
     %br/
     %br/
     = f.simple_fields_for :company do |c|
