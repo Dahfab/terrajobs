@@ -57,7 +57,15 @@ class JobsController < ActionController::Base
         :apply_date,
         :category_id,
         :type_id,
-        company_attributes: [:id, :_destroy, :company_id, :name, :mail, :facebook_url, :twitter_url, :logo] 
+        company_attributes: [
+            :id, 
+            :_destroy, 
+            :company_id, 
+            :name, 
+            :mail, 
+            :facebook_url, 
+            :twitter_url, 
+            :logo] 
         )
     end
 
