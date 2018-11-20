@@ -65,7 +65,8 @@ class JobsController < ActionController::Base
             :mail, 
             :facebook_url, 
             :twitter_url, 
-            :logo] 
+            :logo
+        ] 
         )
     end
 

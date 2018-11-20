@@ -2,7 +2,8 @@
 = link_to("zurück", @previous_url)
 %br/
 %br/
-= image_tag(@job.company.logo_small)
+- if @job.company.logo.attached?
+    = image_tag(@job.company.logo_small)
 %br/
 %b Firma:
 %span= @job.company.name

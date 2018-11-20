@@ -2,26 +2,42 @@
 
 = link_to("zurück", :root)
 
-= simple_form_for @job do |f|
+= form_for @job do |f|
     = render "shared/error_messages", :target => @job
-    = f.input :position, label: "Position"
+    = f.label :position, "Position"
+    = f.text_field :position
     %br/
-    = f.input :description, as: :text, label: "Beschreibung"
     %br/
-    = f.input :responsibilities, as: :text, label: "Aufgaben"
+    = f.label :description, "Beschreibung"
+    = f.text_area :description
     %br/
-    = f.input :requirements, as: :text, label: "Anforderungen" 
-    %br/ 
-    = f.input :offers, as: :text, label: "Wir bieten" 
-    %br/ 
-    = f.input :how_to_apply, as: :text, label: "Wie du dich bewirbst"
     %br/
-    = f.input :apply_url, label: "Bewerbungs URL"
+    = f.label :responsibilities, "Aufgaben"
+    = f.text_area :responsibilities
+    %br/
+    %br/
+    = f.label :requirements, "Anforderungen"
+    = f.text_area :requirements
     %br/ 
-    = f.input :apply_mail, label: "Bewerbungs E-Mail"
+    %br/
+    = f.label :offers, "Wir bieten"
+    = f.text_area :offers
     %br/ 
+    %br/
+    = f.label :how_to_apply, "Wie du dich bewirbst"
+    = f.text_area :how_to_apply
+    %br/
+    %br/
+    = f.label :apply_url, "Bewerbungslink"
+    = f.url_field :apply_url
+    %br/ 
+    %br/
+    = f.label :apply_mail, "Bewerbungs E-Mail"
+    = f.email_field :apply_mail
+    %br/ 
+    %br/
     = f.label :apply_date, "Bewerbungsschluss"
-    = f.date_select :apply_date
+    = f.date_field :apply_date
     %br/ 
     %br/
     = f.label :category_id, "Kategorie"
@@ -32,10 +48,12 @@
     = f.select :type_id, @types.map { |c| [c.name, c.id] }
     %br/
     %br/
-    = f.simple_fields_for :company do |c|
-        = c.input :name, label: "Firmenname"
+    = f.fields_for :company do |c|
+        = c.label :name, "Firmenname"
+        = c.text_field :name
         %br/
-        = c.input :mail, label: "E-Mail Adresse"
+        = c.label :mail, "E-Mail Adresse"
+        = c.email_field :mail
         %br/
         = c.label :logo, "Firmenlogo"
         = c.file_field :logo
