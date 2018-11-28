@@ -7,18 +7,18 @@
 %br/
 %br/
 
-%h2 Heute
-- @jobs_today.each do |job|
-    = render partial: "partials/job_listings", locals: {job: job}  
+- if @jobs_today.any?
+    %h2 Heute
+    = render partial: "partials/job_listings", object: @jobs_today
 
-%h2 Diese Woche
-- @jobs_week.each do |job|
-    = render partial: "partials/job_listings", locals: {job: job} 
+- if @jobs_week.any?
+    %h2 Diese Woche
+    = render partial: "partials/job_listings", object: @jobs_week
 
-%h2 Diesen Monat
-- @jobs_month.each do |job|
-    = render partial: "partials/job_listings", locals: {job: job} 
+- if @jobs_month.any?
+    %h2 Diesen Monat
+    = render partial: "partials/job_listings", object: @jobs_month
 
-%h2 Länger her
-- @jobs.each do |job|
-    = render partial: "partials/job_listings", locals: {job: job} 
+- if @jobs.any?
+    %h2 Älter
+    = render partial: "partials/job_listings", object: @jobs
