@@ -3,7 +3,7 @@
 = link_to("zurück", :root)
 
 = form_for @job do |f|
-    = render "shared/error_messages", :target => @job
+    = render "partials/error_messages", :target => @job
     = f.label :position, "Position"
     = f.text_field :position
     %br/

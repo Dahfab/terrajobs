@@ -6,10 +6,19 @@
     %span= link_to("#{category.name}", category_path(category))
 %br/
 %br/
+
+%h2 Heute
+- @jobs_today.each do |job|
+    = render partial: "partials/job_listings", locals: {job: job}  
+
+%h2 Diese Woche
+- @jobs_week.each do |job|
+    = render partial: "partials/job_listings", locals: {job: job} 
+
+%h2 Diesen Monat
+- @jobs_month.each do |job|
+    = render partial: "partials/job_listings", locals: {job: job} 
+
+%h2 Länger her
 - @jobs.each do |job|
-    - if job.highlight == false
-        .job-position
-            %h2= link_to("#{job.position}", job_path(job))
-    - else
-        .job-position.highlight
-            %h2= link_to("#{job.position}", job_path(job))
+    = render partial: "partials/job_listings", locals: {job: job} 
