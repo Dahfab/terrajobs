@@ -1,4 +1,4 @@
-class CompaniesController < ActionController::Base
+class CompaniesController < ApplicationController
     def index 
     end
 end

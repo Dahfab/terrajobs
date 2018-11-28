@@ -7,4 +7,9 @@
 %br/
 %br/
 - @jobs.each do |job|
-    %h2= link_to("#{job.position}", job_path(job))
+    - if job.highlight == false
+        .job-position
+            %h2= link_to("#{job.position}", job_path(job))
+    - else
+        .job-position.highlight
+            %h2= link_to("#{job.position}", job_path(job))

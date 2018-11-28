@@ -48,6 +48,10 @@
     = f.select :type_id, @types.map { |c| [c.name, c.id] }
     %br/
     %br/
+    = f.label :highlight, "Post hervorheben?"
+    = f.check_box :highlight, {}, "true", "false"
+    %br/
+    %br/
     = f.fields_for :company do |c|
         = c.label :name, "Firmenname"
         = c.text_field :name

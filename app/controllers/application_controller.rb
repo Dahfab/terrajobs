@@ -1,11 +1,11 @@
 class ApplicationController < ActionController::Base
-    before_action :initialize, only: :index
+    before_action :initialize_variables, only: :index
     
     def index 
     end
 
     private
-    def initialize 
+    def initialize_variables 
         @jobs = Job.all
         @category = Category.all
     end

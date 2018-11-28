@@ -1,12 +1,12 @@
-class JobsController < ActionController::Base
-    before_action :initialize, only: :new
+class JobsController < ApplicationController
+    before_action :initialize_variables, only: :new
 
     def index 
     end
 
     def new 
         @job = Job.new
-        @job.build_company
+        @job.build_company 
     end
 
     def create 
@@ -39,7 +39,7 @@ class JobsController < ActionController::Base
     
 
     private
-    def initialize
+    def initialize_variables
         @categories = Category.all
         @types = Type.all
     end
@@ -55,6 +55,7 @@ class JobsController < ActionController::Base
         :apply_url, 
         :apply_mail, 
         :apply_date,
+        :highlight,
         :category_id,
         :type_id,
         company_attributes: [
