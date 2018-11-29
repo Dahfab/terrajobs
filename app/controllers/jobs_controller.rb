@@ -12,7 +12,7 @@ class JobsController < ApplicationController
     def create 
         @job = Job.new(job_params)
         @job.create_company(job_params[:company_attributes])
-        if @job.save 
+        if @job.save
             flash[:notice] = "Job angelegt!" 
             redirect_to :root
         else
@@ -64,6 +64,7 @@ class JobsController < ApplicationController
             :company_id, 
             :name, 
             :mail, 
+            :address,
             :facebook_url, 
             :twitter_url, 
             :logo
