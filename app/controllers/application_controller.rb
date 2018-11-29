@@ -2,6 +2,9 @@ class ApplicationController < ActionController::Base
     before_action :initialize_variables, only: :index
     
     def index 
+        if params[:search].present?
+            @output = Job.near(params[:search], 20)
+        end
         @jobs_week = @this_week - @jobs_today
         @jobs_month = @this_month - @this_week
     end

@@ -6,6 +6,14 @@
     %span= link_to("#{category.name}", category_path(category))
 %br/
 %br/
+= form_tag root_path, method: :get do
+    = text_field_tag :search, nil, placeholder: "Berlin etc.", maxlength: 20
+    = submit_tag "Suchen"
+  
+%h2 Suchergebnisse
+- @output.each do |job|
+    %h2= job.position
+
 
 - if @jobs_today.any?
     %h2 Heute
