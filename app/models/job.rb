@@ -2,6 +2,8 @@ class Job < ApplicationRecord
    belongs_to :company, optional: true
    has_one :category
    has_one :type
+   geocoded_by :address
+   after_validation :geocode
 
    extend FriendlyId
    friendly_id :slug_candidates, use: :slugged

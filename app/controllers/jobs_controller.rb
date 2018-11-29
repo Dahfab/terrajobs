@@ -56,6 +56,7 @@ class JobsController < ApplicationController
         :apply_mail, 
         :apply_date,
         :highlight,
+        :address,
         :category_id,
         :type_id,
         company_attributes: [
