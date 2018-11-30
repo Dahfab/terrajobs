@@ -3,13 +3,11 @@ class ApplicationController < ActionController::Base
     
     def index 
         if params[:search].present?
-            @jobs = @jobs.near(params[:search], 20)
-            @jobs_today = @jobs_today.near(params[:search], 20)
-            @this_week = @this_week.near(params[:search], 20)
-            @this_month = @this_month.near(params[:search], 20)
+            @search_query = params[:search]
+            define_radius
+            find_jobs_near_location
         end
-        @jobs_week = @this_week - @jobs_today
-        @jobs_month = @this_month - @this_week
+        exlude_present_jobs
     end
 
     private
@@ -20,4 +18,24 @@ class ApplicationController < ActionController::Base
         @this_month = Job.where(created_at: Time.zone.now.beginning_of_month..Time.zone.now.end_of_month).order(created_at: :desc)
         @category = Category.all
     end
+
+    def define_radius
+        @radius = params[:radius]
+        if @radius.empty?
+            @radius = 20
+        end
+    end
+
+    def exlude_present_jobs
+        @jobs_week = @this_week - @jobs_today
+        @jobs_month = @this_month - @this_week
+    end
+
+    def find_jobs_near_location
+        @jobs = @jobs.near(params[:search], @radius)
+        @jobs_today = @jobs_today.near(params[:search], @radius)
+        @this_week = @this_week.near(params[:search], @radius)
+        @this_month = @this_month.near(params[:search], @radius)
+    end
+    
 end

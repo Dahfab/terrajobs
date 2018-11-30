@@ -8,26 +8,32 @@
 %br/
 = form_tag root_path, method: :get, autocomplete: :off do
     = text_field_tag :search, nil, placeholder: "Berlin etc.", maxlength: 20
+    = select_tag :radius, options_for_select([ "10", "20", "40", "60", "100" ]), prompt: "und Umgebung (km)"
     = submit_tag "Suchen", name: nil
 
--if params[:search].present?  
+-if params[:search].present? 
     %h2 Suchergebnisse:
-    %span= link_to("zurück", root_path)
-    - if @jobs_today.any?
-        %h2 Heute
-        = render partial: "partials/job_listings", object: @jobs_today
+    -if @jobs.any? || @jobs_today.any? || @jobs_week.any? || @jobs_month.any? 
+        %span= link_to("zurück", root_path)
+        - if @jobs_today.any?
+            %h2 Heute
+            = render partial: "partials/job_listings", object: @jobs_today
 
-    - if @jobs_week.any?
-        %h2 Diese Woche
-        = render partial: "partials/job_listings", object: @jobs_week
+        - if @jobs_week.any?
+            %h2 Diese Woche
+            = render partial: "partials/job_listings", object: @jobs_week
 
-    - if @jobs_month.any?
-        %h2 Diesen Monat
-        = render partial: "partials/job_listings", object: @jobs_month
+        - if @jobs_month.any?
+            %h2 Diesen Monat
+            = render partial: "partials/job_listings", object: @jobs_month
 
-    - if @jobs.any?
-        %h2 Älter
-        = render partial: "partials/job_listings", object: @jobs
+        - if @jobs.any?
+            %h2 Älter
+            = render partial: "partials/job_listings", object: @jobs
+    -else
+        %h2 Keine Ergebnisse gefunden für: "#{@search_query}"
+        %p Bitte erneut versuchen oder #{link_to("zurück", root_path)}
+       
 -else  
     - if @jobs_today.any?
         %h2 Heute
