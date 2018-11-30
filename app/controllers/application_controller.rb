@@ -3,7 +3,10 @@ class ApplicationController < ActionController::Base
     
     def index 
         if params[:search].present?
-            @output = Job.near(params[:search], 20)
+            @jobs = @jobs.near(params[:search], 20)
+            @jobs_today = @jobs_today.near(params[:search], 20)
+            @this_week = @this_week.near(params[:search], 20)
+            @this_month = @this_month.near(params[:search], 20)
         end
         @jobs_week = @this_week - @jobs_today
         @jobs_month = @this_month - @this_week
@@ -11,7 +14,7 @@ class ApplicationController < ActionController::Base
 
     private
     def initialize_variables 
-        @jobs = Job.all.where("created_at < ?", 1.month.ago).order(created_at: :desc)
+        @jobs = Job.where("created_at < ?", 1.month.ago).order(created_at: :desc)
         @jobs_today = Job.where(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day).order(created_at: :desc)
         @this_week = Job.where(created_at: Time.zone.now.beginning_of_week..Time.zone.now.end_of_week).order(created_at: :desc)
         @this_month = Job.where(created_at: Time.zone.now.beginning_of_month..Time.zone.now.end_of_month).order(created_at: :desc)
