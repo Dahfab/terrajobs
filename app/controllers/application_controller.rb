@@ -11,6 +11,11 @@ class ApplicationController < ActionController::Base
     end
 
     private
+    def not_authenticated
+        # Make sure that we reference the route from the main app.
+        redirect_to main_app.backend_path
+    end
+
     def initialize_variables 
         @jobs = Job.where("created_at < ?", 1.month.ago).order(created_at: :desc)
         @jobs_today = Job.where(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day).order(created_at: :desc)

@@ -18,6 +18,7 @@ gem 'friendly_id', '~> 5.2', '>= 5.2.4'
 
 gem 'geocoder', '~> 1.5'
 gem 'sorcery', '~> 0.13.0'
+gem 'rails_admin', '~> 1.4', '>= 1.4.2'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
