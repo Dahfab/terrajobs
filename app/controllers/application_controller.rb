@@ -19,8 +19,8 @@ class ApplicationController < ActionController::Base
     def initialize_variables 
         @jobs = Job.where("created_at < ?", 1.month.ago).order(created_at: :desc)
         @jobs_today = Job.where(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day).order(created_at: :desc)
-        @this_week = Job.where(created_at: Time.zone.now.beginning_of_week..Time.zone.now.end_of_week).order(created_at: :desc)
-        @this_month = Job.where(created_at: Time.zone.now.beginning_of_month..Time.zone.now.end_of_month).order(created_at: :desc)
+        @this_week = Job.where("created_at > ?", 1.week.ago).order(created_at: :desc)
+        @this_month = Job.where("created_at > ?", 1.month.ago).order(created_at: :desc)
         @category = Category.all
     end
 
