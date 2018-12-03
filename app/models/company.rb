@@ -1,6 +1,8 @@
 class Company < ApplicationRecord
     has_many :jobs
     has_one_attached :logo
+    validates :name, :email, presence: true
+    validates :name, uniqueness: true
 
     extend FriendlyId
     friendly_id :slug_candidates, use: [:slugged, :history]

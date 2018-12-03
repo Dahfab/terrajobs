@@ -1,0 +1,17 @@
+- if @jobs_today.any?
+    %h2 Heute
+    = render partial: "partials/job_listing", collection: @jobs_today, cached: true
+
+- if @jobs_week.any?
+    %h2 Diese Woche
+    = render partial: "partials/job_listing", collection: @jobs_week, cached: true
+
+- if @jobs_month.any?
+    %h2 Diesen Monat
+    = render partial: "partials/job_listing", collection: @jobs_month, cached: true
+
+- if @jobs.any?
+    %h2 Älter
+    = render partial: "partials/job_listing", collection: @jobs, cached: true
+
+

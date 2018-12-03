@@ -1,0 +1,8 @@
+- if job_listing.highlight == true
+    .job-position.highlight
+        %h2= link_to("#{job_listing.position}", job_path(job_listing))
+- else
+    .job-position
+        %h2= link_to("#{job_listing.position}", job_path(job_listing))
+
+

@@ -22,6 +22,7 @@ class JobsController < ApplicationController
 
     def show
         @job = Job.friendly.find(params[:id])
+        fresh_when @job, public: true
         @category = Category.friendly.find(@job.category_id)
         @type = Type.find(@job.type_id)
         @previous_url = URI(request.referrer).path 

@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
-    before_action :initialize_variables, only: :index
+   before_action :initialize_variables, only: :index
     
-    def index 
+    def index
         if params[:search].present?
             @search_query = params[:search]
             define_radius
@@ -12,7 +12,6 @@ class ApplicationController < ActionController::Base
 
     private
     def not_authenticated
-        # Make sure that we reference the route from the main app.
         redirect_to main_app.backend_path
     end
 
