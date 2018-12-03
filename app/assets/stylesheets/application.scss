@@ -15,6 +15,12 @@
  */
  @import "normalize.css";
 
+ .field_with_errors {
+    padding: 2px;
+    background-color: red;
+    display: table;
+  }
+
 .highlight {
      background-color: yellow;
  }

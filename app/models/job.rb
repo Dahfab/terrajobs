@@ -2,7 +2,7 @@ class Job < ApplicationRecord
    belongs_to :company, optional: true, touch: true
    belongs_to :category
    belongs_to :type
-   validates :position,:description, presence: true
+   validates :position,:description, presence: {message: "Darf nicht leer sein"}, on: :create 
    geocoded_by :address
    after_validation :geocode
 

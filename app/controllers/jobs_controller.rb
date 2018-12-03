@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-    before_action :initialize_variables, only: :new
+    before_action :initialize_variables, only: [:new, :create]
 
     def index 
     end

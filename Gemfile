@@ -16,6 +16,9 @@ gem "haml-rails", "~> 1.0"
 #gem 'simple_form', '~> 4.0', '>= 4.0.1'
 gem 'friendly_id', '~> 5.2', '>= 5.2.4'
 
+gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
+gem 'client_side_validations', '~> 11.1', '>= 11.1.3'
+
 gem 'geocoder', '~> 1.5'
 gem 'sorcery', '~> 0.13.0'
 gem 'rails_admin', '~> 1.4', '>= 1.4.2'

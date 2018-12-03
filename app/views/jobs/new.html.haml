@@ -2,8 +2,8 @@
 
 = link_to("zurück", :root)
 
-= form_for @job do |f|
-    = render "partials/error_messages", :target => @job
+= form_for @job, validate: true do |f|
+    = render "partials/error_messages", :target => @job 
     = f.label :position, "Position"
     = f.text_field :position
     %br/
