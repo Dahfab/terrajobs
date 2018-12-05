@@ -22,7 +22,9 @@ gem 'client_side_validations', '~> 11.1', '>= 11.1.3'
 gem 'geocoder', '~> 1.5'
 gem 'sorcery', '~> 0.13.0'
 gem 'rails_admin', '~> 1.4', '>= 1.4.2'
-gem 'bullet', '~> 5.9'
+#gem 'bullet', '~> 5.9'
+
+#gem 'ruby-growl', '~> 4.1'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

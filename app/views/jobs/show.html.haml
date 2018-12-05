@@ -1,4 +1,4 @@
-%h1= @job.position
+%h1= sanitize @job.position
 = link_to("zurück", @previous_url)
 %br/
 %br/
@@ -6,30 +6,30 @@
     = image_tag(@job.company.logo_small)
 %br/
 %b Firma:
-%span= @job.company.name
+%span= sanitize @job.company.name
 %br/
 %b E-Mail:
-%span= @job.company.mail
+%span= sanitize @job.company.mail
 %br/
 %br/
 %b Beschreibung:
-%p= @job.description
+%p= sanitize @job.description
 %br/
 
 %b Aufgaben:
-%p= @job.responsibilities
+%p= sanitize @job.responsibilities
 %br/
 
 %b Anforderungen:
-%p= @job.requirements
+%p= sanitize @job.requirements
 %br/
 
 %b Wir bieten:
-%p= @job.offers 
+%p= sanitize @job.offers 
 %br/
 
 %b Wie Sie sich bewerben:
-%p= @job.how_to_apply
+%p= sanitize @job.how_to_apply
 %br/
 
 %b Kategorie:
