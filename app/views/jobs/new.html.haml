@@ -5,11 +5,11 @@
 = form_for @job, validate: true do |f|
     = render "partials/error_messages", :target => @job 
     = f.label :position, "Position"
-    = f.text_field :position
+    = f.text_field :position, required: true
     %br/
     %br/
     = f.label :description, "Beschreibung"
-    = f.text_area :description
+    = f.text_area :description, required: true
     %br/
     %br/
     = f.label :responsibilities, "Aufgaben"
@@ -58,10 +58,10 @@
     %br/
     = f.fields_for :company do |c|
         = c.label :name, "Firmenname"
-        = c.text_field :name
+        = c.text_field :name, required: true
         %br/
         = c.label :mail, "E-Mail Adresse"
-        = c.email_field :mail
+        = c.email_field :mail, required: true
         %br/
         = c.label :logo, "Firmenlogo"
         = c.file_field :logo
