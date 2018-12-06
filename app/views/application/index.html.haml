@@ -1,7 +1,6 @@
 - if flash[:notice]
-    %h2= flash[:notice]
+    %h2.h2= flash[:notice]
 
-%h1 Alle Jobs
 = link_to("Neuen Job posten", job_inserieren_path)
 %br/
 = link_to("login", backend_path) 
@@ -9,19 +8,25 @@
 = render partial: "partials/categories", collection: @category, cached: true
 %br/
 %br/
-= form_tag root_path, method: :get, autocomplete: :off do
-    = text_field_tag :search, nil, placeholder: "Berlin etc.", maxlength: 20
-    = select_tag :radius, options_for_select([ "10", "20", "40", "60", "100" ]), prompt: "und Umgebung (km)"
-    = submit_tag "Suchen", name: nil
-
--if params[:search].present?
-    %h2 Suchergebnisse:
-    -if @jobs.any? || @jobs_today.any? || @jobs_week.any? || @jobs_month.any? 
-        %span= link_to("zurück", root_path)
-        = render partial: "partials/job_table"
-    -else
-        %h2 Keine Ergebnisse gefunden für: "#{@search_query}"
-        %p Bitte erneut versuchen oder #{link_to("zurück", root_path)}
-       
--else  
-    = render partial: "partials/job_table"
+%section.cta
+    %h2 Neuer Mitarbeiter gesucht? Jetzt Job veröffentlichen:
+    = link_to("Job inserieren - kostenlos", job_inserieren_path) 
+        
+%section.jobs
+    .jobs__search
+        = form_tag root_path, method: :get, autocomplete: :off do
+            = text_field_tag :search, nil, placeholder: "Berlin etc.", maxlength: 20
+            = select_tag :radius, options_for_select([ "10", "20", "40", "60", "100" ]), prompt: "und Umgebung (km)"
+            = submit_tag "Suchen", name: nil
+    .jobs__listings
+        -if params[:search].present?
+            %h2.h2 Suchergebnisse:
+            -if @jobs.any? || @jobs_today.any? || @jobs_week.any? || @jobs_month.any? 
+                %span= link_to("zurück", root_path)
+                = render partial: "partials/job_table"
+            -else
+                %h2.h2 Keine Ergebnisse gefunden für: "#{@search_query}"
+                %p Bitte erneut versuchen oder #{link_to("zurück", root_path)}
+            
+        -else
+            = render partial: "partials/job_table"

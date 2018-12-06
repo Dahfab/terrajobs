@@ -1,0 +1,38 @@
+$page-width: 80vw;
+$max-width: 65em;
+$font-size: 0.8rem;
+
+.cta {
+    margin: 4em auto;
+    max-width: $max-width;
+    text-align: center;
+    padding: 0 1em;
+
+    h2:before {
+        content:" 👉";
+        margin-right: 0.5em;
+    }
+
+    a {
+        display: inline-block;
+        max-width: 15em;
+        padding: 1em 1.5em;
+        margin-top: 0.5em;
+        border-radius: 5px;
+        background-color: #49C5B6;
+        color: #fff;
+        border: 0px;
+        font-weight: 700;
+
+        &:hover {
+            cursor: pointer;
+            -webkit-box-shadow: 0px 7px 20px 0px rgba(0,0,0,0.24);
+            -moz-box-shadow: 0px 7px 20px 0px rgba(0,0,0,0.24);
+            box-shadow: 0px 7px 20px 0px rgba(0,0,0,0.24);
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+}

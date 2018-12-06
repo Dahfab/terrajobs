@@ -1,0 +1,21 @@
+body {
+    overflow-x: hidden;
+    background-color: #fff;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #282828;
+}
+
+.h2 {
+    margin: 1.5em 0 0.5em 0;
+        &--jobtitle {
+            margin: 0;
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+}
+
+a {
+    text-decoration: none;
+}

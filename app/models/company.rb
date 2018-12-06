@@ -16,6 +16,6 @@ class Company < ApplicationRecord
     end
 
     def logo_small
-        return self.logo.variant(resize: "100x100")
+        return self.logo.variant(resize: "80x80")
     end
 end

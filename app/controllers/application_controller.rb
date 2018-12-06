@@ -21,6 +21,7 @@ class ApplicationController < ActionController::Base
         @this_week = Job.where("created_at > ?", 1.week.ago).order(created_at: :desc)
         @this_month = Job.where("created_at > ?", 1.month.ago).order(created_at: :desc)
         @category = Category.all
+        @types = Type.all
     end
 
     def define_radius
