@@ -15,9 +15,9 @@
 %section.jobs
     .jobs__search
         = form_tag root_path, method: :get, autocomplete: :off do
-            = text_field_tag :search, nil, placeholder: "Berlin etc.", maxlength: 20
-            = select_tag :radius, options_for_select([ "10", "20", "40", "60", "100" ]), prompt: "und Umgebung (km)"
-            = submit_tag "Suchen", name: nil
+            = text_field_tag :search, nil, placeholder: "Berlin etc.", maxlength: 20, class: "jobs__search__input"
+            = select_tag :radius, options_for_select([ "10", "20", "40", "60", "100" ]), prompt: "und Umgebung (km)", class: "jobs__search__select"
+            = submit_tag "Suchen", name: nil, class: "jobs__search__submit"
     .jobs__listings
         -if params[:search].present?
             %h2.h2 Suchergebnisse:

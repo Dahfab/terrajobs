@@ -1,6 +1,6 @@
-$page-width: 80vw;
+$page-width: 90vw;
 $max-width: 65em;
-$font-size: 0.8rem;
+$font-size: 0.9rem;
 
 .jobs {
     display: block;
@@ -36,15 +36,90 @@ $font-size: 0.8rem;
     &__search {
         display: block;
         width: calc(100% - 4em);
-        min-height: 3em;
-        padding: 3em 2em 2em 2em; 
+        min-height: 4em;
+        padding: 2.5em 2em 1em 2em; 
         background: rgb(240,241,251);
         background: -moz-linear-gradient(180deg, rgba(240,241,251,1) 0%, rgba(255,255,255,1) 100%);
         background: -webkit-linear-gradient(180deg, rgba(240,241,251,1) 0%, rgba(255,255,255,1) 100%);
         background: linear-gradient(180deg, rgba(240,241,251,1) 0%, rgba(255,255,255,1) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f0f1fb",endColorstr="#ffffff",GradientType=1);    
-    
-        
+     
+        &__input {
+            width: 20em;
+            padding: 0.7em;
+            margin-right: 0.5em;
+            border-radius: 5px;
+            border: 0px;
+            -webkit-box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.20);
+            -moz-box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.20);
+            box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.20);
+
+
+            &:focus {
+                outline: none;
+                -webkit-box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.30);
+                -moz-box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.30);
+                box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.30);
+            }
+        }
+
+        &__select {
+            background-color: #fff;
+            height: 2.4em;
+            width: 11em;
+            margin-right: 0.5em;
+            border: 0px;
+            color: #757575;
+            -webkit-box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.20);
+            -moz-box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.20);
+            box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.20);
+
+            &:focus {
+                outline: none;
+                -webkit-box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.30);
+                -moz-box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.30);
+                box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.30);
+            }
+        }
+
+        &__submit {
+            padding: 0.55em 1em;
+            vertical-align: middle;
+            border: 2px solid #6896D7;
+            border-radius: 5px;
+            background: transparent;
+            color: #6896D7;
+            font-weight: 700;
+
+            &:hover {
+                background-color: #6896D7;
+                color: #fff;
+                cursor: pointer;
+                -webkit-box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.20);
+                -moz-box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.20);
+                box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.20);
+            }
+        }
+
+        @media screen and (max-width: 50em) {
+           
+                &__input {
+                    display: block;
+                    margin: 0 auto;
+                    width: calc(100% - 2em);
+                }
+                &__select {
+                    display: block;
+                    margin: 0.5em auto;
+                    width: calc(100% - 0.5em);
+                }
+                &__submit {
+                    display: block;
+                    margin: 0 auto;
+                    width: calc(100% - 0.5em);
+                }
+            
+            }
     }
 
     &__listings {
@@ -94,7 +169,7 @@ $font-size: 0.8rem;
                         span {
                             background-color: #000;
                             color: #fff;
-                            padding: 2px 6px;
+                            padding: 0.2em 0.5em;
                             border-radius: 5px;
                             font-size: $font-size;
                         }
@@ -106,34 +181,43 @@ $font-size: 0.8rem;
                     }
             }
            
-            @media screen and (max-width: 48em) {
+            @media screen and (max-width: 50em) {
                 .table {
                     &__item {
                         &--jobtitle {
                             display: block;
+                         
                         }
                         &--location {
                             display: block;
+                      
                         }
                         &--jobtype {
                             display: block;
+                            
                         }
                     }
                 }
             }
         
-            @media screen and (min-width: 48em) {
+            @media screen and (min-width: 50em) {
                 .table {
         
                     &__item {
                         &--jobtitle {
                             padding: 1em 0;
+                            font-size: 1rem;
                         }
                         &--location {
                             width: 30%;
+                            font-size: 1rem;
                         }
                         &--jobtype {
                             width: 30%;
+                            font-size: 1rem;
+                        }
+                        &--posted {
+                            font-size: 1rem;
                         }
                     }
                 }  

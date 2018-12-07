@@ -26,9 +26,9 @@ $font-size: 0.8rem;
 
         &:hover {
             cursor: pointer;
-            -webkit-box-shadow: 0px 7px 20px 0px rgba(0,0,0,0.24);
-            -moz-box-shadow: 0px 7px 20px 0px rgba(0,0,0,0.24);
-            box-shadow: 0px 7px 20px 0px rgba(0,0,0,0.24);
+            -webkit-box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.20);
+            -moz-box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.20);
+            box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.20);
         }
 
         &:focus {
