@@ -1,9 +1,10 @@
-$page-width: 80vw;
+$page-width: 90vw;
 $max-width: 65em;
 $font-size: 0.8rem;
 
 .cta {
-    margin: 4em auto;
+    margin: 6em auto;
+    margin-top: 13em;
     max-width: $max-width;
     text-align: center;
     padding: 0 1em;
@@ -16,13 +17,14 @@ $font-size: 0.8rem;
     a {
         display: inline-block;
         max-width: 15em;
-        padding: 1em 1.5em;
+        padding: 1em 1em;
         margin-top: 0.5em;
         border-radius: 5px;
         background-color: #49C5B6;
-        color: #fff;
+        color: #21524C;
         border: 0px;
         font-weight: 700;
+        font-size: 1.2rem;
 
         &:hover {
             cursor: pointer;
@@ -34,5 +36,10 @@ $font-size: 0.8rem;
         &:focus {
             outline: none;
         }
+    }
+
+    @media screen and (min-width: 50em) {
+        position: relative;
+        top: -2em;
     }
 }

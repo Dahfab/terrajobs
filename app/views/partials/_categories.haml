@@ -1,3 +1,6 @@
-%span= link_to("#{categories.name}", category_path(categories))
+%span{class: "categories__grid__item", onclick: "window.location='#{category_path(categories)}'"}
+    %span.icon 
+    = link_to("#{categories.name}", category_path(categories))
+
 
 
