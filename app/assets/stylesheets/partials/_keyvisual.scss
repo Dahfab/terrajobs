@@ -1,65 +1,61 @@
 $page-width: 90vw;
-$max-width: 65em;
+$max-width: 500px;
 
-.intro {
-    height: 70vw;
-    position: relative;
+.keyvisual {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
 
-    .keyvisual {
-        position: absolute;
-        left: 0;
-        right: 0;
-        margin: auto;
-        text-align: center;
+    &--mockup {
+        top: 100%;
+        transform: translateY(-60%);
+        animation: MoveUpDown 5s linear infinite;
+        z-index: 2;
+        
+        @keyframes MoveUpDown {
+            0% {
+                transform: translateY(-60%);
+            }
+            50% {
+                transform: translateY(-70%);
+            }
+            100% {
+                transform: translateY(-60%);
+                }
+            }
 
-        &--mockup {
-            top: 100%;
-            transform: translateY(-60%);
-            animation: MoveUpDown 5s linear infinite;
-            z-index: 2;
+        
+        img {
             
-            @keyframes MoveUpDown {
-                0% {
-                    transform: translateY(-60%);
-                }
-                50% {
-                    transform: translateY(-70%);
-                }
-                100% {
-                    transform: translateY(-60%);
-                  }
-              }
-    
-           
-            img {
-                
-                width: 90vw;
-                max-width: 600px;
-            }
+            width: $page-width;
+            max-width: $max-width;
         }
-    
-        &--shadow {
-            top: 100%;
-            animation: scale 5s linear infinite;
-            z-index: 1;
-           
-            @keyframes scale {
-                0% {
-                    transform: scale(1) translateY(-45%);
-                }
-                50% {
-                    transform: scale(0.9) translateY(-50%);
-                }
-                100% {
-                    transform: scale(1) translateY(-45%);
-                  }
-              }
-    
-            img {
-                width: 90vw;
-                max-width: 600px;
+    }
+
+    &--shadow {
+        top: 100%;
+        animation: scale 5s linear infinite;
+        z-index: 1;
+        
+        @keyframes scale {
+            0% {
+                transform: scale(1) translateY(-45%);
             }
+            50% {
+                transform: scale(0.9) translateY(-50%);
+            }
+            100% {
+                transform: scale(1) translateY(-45%);
+                }
+            }
+
+        img {
+            width: $page-width;
+            max-width: $max-width;
         }
-    }    
-}
+    }
+}    
+
 

@@ -1,0 +1,126 @@
+$page-width: 90vw;
+$max-width: 65em;
+
+.footer {
+    height: auto;
+    background-color: #0A233A;
+    border-top: 10px solid #1B354E;
+    color: #8AA3BB;
+
+
+    .wrapper {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column-reverse;
+        width: $page-width;
+        max-width: $max-width;
+
+        @media screen and (min-width: 65em) {
+            flex-direction: row;
+        }
+
+        &__item {
+            margin: 0 auto;
+
+            &--copy {
+                text-align: center;
+                margin-top: 0em;
+                margin-bottom: 4em;
+                font-size: calc(95% + 0.1vw);
+                max-width: 35em;
+
+                @media screen and (min-width: 65em) {
+                    margin-bottom: 0em;
+                    text-align: left;
+                    padding: 4em 0;
+                    margin: 0;
+                }
+
+                .logo {
+                    a {
+                        color: #E6EBEF;
+                    }
+                }
+
+                .madeWith:after {
+                    content: " 🔥"
+                }
+                
+                p {
+                    font-size: calc(95% + 0.1vw);
+                }
+            }
+
+            &--nav {
+                text-align: center;
+
+                @media screen and (min-width: 65em) {
+                    margin-right: 0;
+                }
+                
+                .list {
+                    list-style-type: none;
+                    padding: 0;
+                    margin: 4em 0;
+
+                    @media screen and (min-width: 30em) {
+                        display: inline-block;
+                        margin: 4em 3em;
+                    }
+
+                    &--first {
+                        vertical-align: top;
+                    }
+
+                    &--second {
+                        @media screen and (min-width: 65em) {
+                            margin-right: 0em;
+                        }
+                    }
+
+                    &__item {
+                        margin: 0.5em 0;
+                        a {
+                            color: #576879;
+
+                            &:hover {
+                                color: #E6EBEF;
+                            }
+                        }
+                    }
+
+                    &__head {
+                        text-transform: uppercase;
+                    }
+                }
+            }
+
+            &__links {
+
+                .list {
+                    list-style-type: none;
+                    padding: 0;
+
+                    &__item {
+                        display: inline;
+                        margin: 0 0.5em;
+
+                        @media screen and (min-width: 65em) {
+                            margin: 0 0.5em 0 0;
+                        }
+
+                        a {
+                            color: #576879;
+
+                            &:hover {
+                                color: #E6EBEF;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+

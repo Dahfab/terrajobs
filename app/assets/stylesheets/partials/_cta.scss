@@ -4,10 +4,10 @@ $font-size: 0.8rem;
 
 .cta {
     margin: 6em auto;
-    margin-top: 13em;
+    margin-top: 11em;
     max-width: $max-width;
     text-align: center;
-    padding: 0 1em;
+    padding: 0 2em;
 
     h2:before {
         content:" 👉";
@@ -20,7 +20,7 @@ $font-size: 0.8rem;
         padding: 1em 1em;
         margin-top: 0.5em;
         border-radius: 5px;
-        background-color: #49C5B6;
+        background-color: #00C596;
         color: #21524C;
         border: 0px;
         font-weight: 700;

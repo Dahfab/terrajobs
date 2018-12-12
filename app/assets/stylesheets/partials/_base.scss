@@ -1,3 +1,14 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: calc(100% + 0.1vw);
+  }
+
 body {
     overflow-x: hidden;
     background-color: #fff;
@@ -7,6 +18,15 @@ body {
     color: #282828;
 }
 
+.h1 {
+    font-size: 2rem;
+    &--intro {
+        margin: 0.67em auto;
+        font-weight: 900;
+        max-width: 25em;
+    }
+}
+
 .h2 {
     margin: 1.5em 0 0.5em 0;
         &--jobtitle {
@@ -14,6 +34,16 @@ body {
             font-weight: 800;
             font-size: 1.1rem;
         }
+
+        &--info {
+            text-align: left;
+            font-weight: 800;
+            font-size: 1.5rem;
+        }
+}
+
+p {
+    font-size: calc(112% + 0.1vw);
 }
 
 a {
