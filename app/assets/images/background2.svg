@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="749px" height="514px" viewBox="0 0 749 514" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 4</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="73.5277287%" y1="-57.773693%" x2="-37.0392086%" y2="129.011411%" id="linearGradient-1">
+            <stop stop-color="#64D7CA" offset="0%"></stop>
+            <stop stop-color="#6B4CE6" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-691.000000, 0.000000)">
+            <g id="Group-4" transform="translate(691.000000, -2.000000)">
+                <path d="M597.321569,439.052192 C624.545929,447.866947 664.783759,465.521457 693.515579,479.698652 C711.434195,488.786752 729.929002,500.826023 749,515.816467 L749,450.423087 L558.482012,369.871655 L533.099665,369.871655 L400.034756,365.960125 C429.594241,384.409496 570.097209,430.237438 597.321569,439.052192 Z" id="Path-6" fill="#BBCFFF"></path>
+                <path d="M29,2 C13.8617678,66.2628195 4.64356177,122.119431 1.34538193,169.569834 C-1.95279792,217.020238 7.59874144,256.676925 30,288.539898 C51.6675201,319.802865 86.2555941,342.319499 133.764222,356.089797 C181.27285,369.860096 283.211263,374.329342 439.57946,369.497534 L165.447882,2 L29,2 Z" id="Path-5" fill="#BBCFFF"></path>
+                <path d="M29,3.0142823 C-9.79685591,166.528264 11.8231344,271.458181 93.8599709,317.804036 C216.915226,387.322817 620.486621,393.705318 749,491.424781 C748.455204,291.360206 749,97.7152635 749,2 C749,0.19559732 593.604254,0.533691421 282.812762,3.0142823 L29,3.0142823 Z" id="Path" fill="url(#linearGradient-1)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

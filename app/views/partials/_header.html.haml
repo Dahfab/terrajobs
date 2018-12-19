@@ -1,0 +1,21 @@
+%header.header
+    %nav#navigation.navigation
+        %ul
+            %li.navigation__item.navigation__item--brand
+                = image_tag 'Logo', alt: '', class: ''
+                = link_to "Terrajobs", root_path
+            %li.navigation__item
+                = link_to "Jobs finden", root_path
+            %li.navigation__item
+                = link_to "Community"
+            %li.navigation__item
+                = link_to "Blog"
+            %li.navigation__item.navigation__item--button
+                = link_to "Job inserieren"
+        %a.navigation__trigger{:href => "#navigation"}
+            %svg{:viewbox => "0 0 100 100", :xmlns => "http://www.w3.org/2000/svg"}
+                %title Navigation anzeigen
+                %path.line--1{:d => "M0 40h62c13 0 6 28-4 18L35 35"}
+                %path.line--2{:d => "M0 50h70"}
+                %path.line--3{:d => "M0 60h62c13 0 6-28-4-18L35 65"}
+        %a.navigation__close{:href => "#close"}

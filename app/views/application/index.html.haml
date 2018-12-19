@@ -1,31 +1,15 @@
 - if flash[:notice]
     %h2.h2= flash[:notice]
 
-%section.intro
-    %h1.h1.h1--intro Finde den passenden Job. In Geo- und Umweltbranchen.
-    %p 
-        Auf Terra Jobs findest du u.a. Jobangebote im Bereich 
-        %strong
-            Geographie, 
-        %strong
-            GIS, 
-        %strong
-            Vermessung 
-        oder auch 
-        %strong
-            Green-Jobs.
-    = link_to "Jobs durchsuchen >", {anchor: "jobs"}
+= render partial: "partials/header"
 
-    .keyvisual.keyvisual--mockup
-        = image_tag 'mockup', alt: '', class: ''
-    .keyvisual.keyvisual--shadow
-        = image_tag 'shadow', alt: '', class: ''
-
+= render "intro"
 
 .backgroundWrapper
     %section.categories
         .categories__grid
             = render partial: "partials/categories", collection: @category, cached: true
+   
     %section.cta
         %h2 Neuer Mitarbeiter gesucht? Jetzt Job veröffentlichen:
         = link_to("Job inserieren - kostenlos", job_inserieren_path) 
@@ -46,81 +30,9 @@
                 -else
                     %h2.h2 Keine Ergebnisse gefunden für: "#{@search_query}"
                     %p Bitte erneut versuchen oder #{link_to("zurück", root_path)}
-                
             -else
                 = render partial: "partials/job_table"
 
-%section.info
-    .windowDummy
-    .info__grid
-        .info__grid__item
-            = image_tag 'story1', alt: '', class: ''
-        .info__grid__item
-            %h2.h2.h2--info Über Terra Jobs
-            %p
-                terrajobs.de ist die zentrale Anlaufstelle für alle Arbeitssuchenden 
-                und Arbeitgeber aus der Geo-, und Umweltbranche. 
-                Hier finden Sie unter anderem Jobs in den Bereichen Geographie, 
-                Geoinformatik, Geologie, Fernerkundung oder Geodäsie. 
-                Die Geoinformation zählt zu einem der zukunftsweisendsten Arbeitsmärkten 
-                der Welt und vereint unterschiedlichste Disziplinen. 
-                Aus diesem Grund ist der Arbeitsmarkt immernoch unübersichtlich. 
-                Wir von Terra Jobs wollen dem entgegenwirken und bilden eine 
-                moderne Community für die Geobranche.
-        .info__grid__item
-            = image_tag 'story2', alt: '', class: ''
-        .info__grid__item
-            %h2.h2.h2--info Für Arbeitgeber
-            %p
-                Wir haben unsere Platform so gestaltet, 
-                dass sie vor allem auch für Arbeitgeber möglichst 
-                einfach und sicher ist. Keine komplizierte Preisgestaltung 
-                und keine unnötigen E-Mails oder Logindaten sind nötig. 
-                Bezahlen Sie schnell und sicher mit PayPal oder Kreditkarte und 
-                erstellen Sie Ihr Jobangebot direkt mit Hilfe des übersichtlichen 
-                Formulars. Sollten Sie weitere Reichweite wünschen, 
-                buchen Sie einfach eine zusätzliche Facebook Ad und wir schalten für 
-                Sie targetierte Werbung im größten sozialen Netzwerk der Welt. 
-                Damit Sie wieder Zeit für die wichtigen Dinge haben.
-%footer.footer
-    .wrapper
-        .wrapper__item.wrapper__item--copy
-            %span.logo
-                = link_to "Terrajobs", root_path
-            %span.madeWith made with 
-            %span in Bochum
-            %p
-                Finde deinen passenden Job in der Geo-, und Umweltbranche. 
-                Jobs in den Bereichen Vermessung bis hin zu GIS. 
-                Übersichtlich und eingebunden in eine zentrale Community rund um Geojobs.
-            .wrapper__item__links
-                %ul.list
-                    %li.list__item
-                        = link_to "Impressum"
-                    %li.list__item
-                        = link_to "Datenschutz"
-        %nav.wrapper__item.wrapper__item--nav
-            %ul.list.list--first
-                %span.list__head Produkt 
-                %li.list__item 
-                    = link_to "Jobs finden"
-                %li.list__item  
-                    = link_to "Commnity" 
-                %li.list__item  
-                    = link_to "Blog"
-                %li.list__item  
-                    = link_to "Job inserieren"
-            %ul.list.list--second
-                %span.list__head Jobs  
-                %li.list__item  
-                    = link_to "Geographie"
-                %li.list__item  
-                    = link_to "Geologie"
-                %li.list__item  
-                    = link_to "GIS"
-                %li.list__item  
-                    = link_to "Vermessung"
-                %li.list__item  
-                    = link_to "Green-Jobs"
-                %li.list__item  
-                    = link_to "Sonstiges"
+= render "info"
+
+= render partial: "partials/footer"

@@ -10,6 +10,10 @@ $max-width: 65em;
     background: linear-gradient(45deg, rgba(107,76,230,1) -40%, rgba(100,215,202,1) 140%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6b4ce6",endColorstr="#64d7ca",GradientType=1);
     
+    @media screen and (min-width: 65em) {
+        padding-bottom: 7em;
+    }
+
     .windowDummy {
         display: block;
         position: relative;
@@ -27,6 +31,10 @@ $max-width: 65em;
         @media screen and (min-width: 30em) {
             width: $page-width;
         }
+
+        @media screen and (min-width: 65em) {
+            margin-bottom: 0em;
+        }
     }
 
     &__grid {
@@ -41,9 +49,10 @@ $max-width: 65em;
         grid-row-gap: 2em;
 
         @media screen and (min-width: 65em) {
+            padding: 0;
             grid-template-rows: 1fr 1fr;
             grid-template-columns: 1fr 1fr;
-            grid-row-gap: 4em;
+            grid-row-gap: 2em;
             grid-column-gap: 4em;
         }
 
@@ -58,6 +67,11 @@ $max-width: 65em;
                     order: 3;
                 }
             }
+
+            img{
+                width: $page-width;
+                max-width: 27em;
+            }
         
             
             p {
@@ -65,10 +79,7 @@ $max-width: 65em;
             }
 
 
-            img {
-                width: $page-width;
-                max-width: 28em;
-            }
+    
         }
     }
 }

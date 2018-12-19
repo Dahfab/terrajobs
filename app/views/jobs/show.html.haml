@@ -1,48 +1,50 @@
-%h1= sanitize @job.position
-= link_to("zurück", @previous_url)
-%br/
-%br/
-- if @job.company.logo.attached?
-    = image_tag(@job.company.logo_small)
-%br/
-%b Firma:
-%span= sanitize @job.company.name
-%br/
-%b E-Mail:
-%span= sanitize @job.company.mail
-%br/
-%br/
-%b Beschreibung:
-%p= sanitize @job.description
-%br/
+= render partial: "partials/header--dark"
 
-%b Aufgaben:
-%p= sanitize @job.responsibilities
-%br/
+%section.jobIntro
+    .background
+    .wrapper
+        .jobIntro__meta
+            %span.category= @category.name
+            %span.jobtype= @type.name
+        %h1.h1.h1--jobhead= sanitize @job.position
+        .jobIntro__logo
+            - if @job.company.logo.attached?
+                = image_tag(@job.company.logo_medium)
+            - else
+                %span Kein Logo
 
-%b Anforderungen:
-%p= sanitize @job.requirements
-%br/
+%section.jobDescription
+    .wrapper
+        .jobDescription__copy         
+            %h2.h2 Beschreibung:
+            %p= sanitize @job.description
 
-%b Wir bieten:
-%p= sanitize @job.offers 
-%br/
+            %h2.h2 Aufgaben:
+            %p= sanitize @job.responsibilities
 
-%b Wie Sie sich bewerben:
-%p= sanitize @job.how_to_apply
-%br/
+            %h2.h2 Anforderungen:
+            %p= sanitize @job.requirements
 
-%b Kategorie:
-%span= @category.name
-%br/
+            %h2.h2 Wir bieten:
+            %p= sanitize @job.offers 
 
-%b Art:
-%span= @type.name
-%br/
+            %h2.h2 Wie Sie sich bewerben:
+            %p= sanitize @job.how_to_apply           
 
-%b Bewerbungsschluss:
-%span= @job.apply_date
+        .jobDescription__sidebar
+            %h2.h2.h2--sidebar Firma:
+            %span= sanitize @job.company.name
 
+            - if @job.apply_date.present?
+                %h2.h2 Bewerbungsschluss:
+                %span= @job.apply_date.strftime("%d.%m.%Y")
 
+            - if @job.company.mail.present?
+                %h2.h2.h2--sidebar E-Mail:
+                %span= sanitize @job.company.mail
+
+            = link_to("Jetzt bewerben", @job.apply_url)
+
+= render partial: "partials/footer"
 
 

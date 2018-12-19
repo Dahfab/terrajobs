@@ -1,0 +1,64 @@
+$page-width: 85vw;
+$max-width: 65em;
+
+.jobDescription {
+    background-color: #ffffff;
+
+    .wrapper {
+        max-width: $max-width;
+        margin-top: 6em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @media screen and (min-width: 65em) {
+            margin-top: 2em;
+        }
+    }
+
+    &__copy {
+        width: $page-width;
+        margin: 0 auto;
+        background-color: #fff;
+        border-radius: 5px;
+        margin-bottom: 4rem;
+    }
+
+    &__sidebar {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        background-color: #EDF8FA;
+        border-radius: 5px;
+        padding: 4rem 8%;
+
+        a {
+            display: inline-block;
+            width: auto;
+            padding: 1em 1em;
+            margin-top: 2em;
+            border-radius: 5px;
+            background-color: #01B39A;
+            color: #21524C;
+            border: 0px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            transition-duration: 200ms;
+            text-align: center;
+    
+            &:hover {
+                cursor: pointer;
+                transform: translateY(-2px);
+                -webkit-box-shadow: 0px 4px 10px 0px rgba(25, 54, 39, 0.4);
+                -moz-box-shadow: 0px 4px 10px 0px rgba(25, 54, 39, 0.4);
+                box-shadow: 0px 4px 10px 0px rgba(25, 54, 39, 0.4);
+            }
+    
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}
+
+

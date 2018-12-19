@@ -6,7 +6,7 @@
 
 html {
     scroll-behavior: smooth;
-    font-size: calc(100% + 0.1vw);
+    font-size: calc(90% + 0.1vw);
   }
 
 body {
@@ -24,6 +24,21 @@ body {
         margin: 0.67em auto;
         font-weight: 900;
         max-width: 25em;
+
+        @media screen and (min-width: 65em) {
+            margin: 0;
+            margin-bottom: 1em;
+            max-width: 15em;
+        }
+    }
+
+    &--jobhead {
+        margin: 0 auto;
+        margin-top: 0.5em;
+        font-size: calc(132% + 0.6vw);
+        max-width: 25em;
+        hyphens: auto;
+        color: #000;
     }
 }
 
@@ -37,15 +52,23 @@ body {
 
         &--info {
             text-align: left;
-            font-weight: 800;
-            font-size: 1.5rem;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+
+        &--sidebar {
+            margin: 0;
         }
 }
 
 p {
     font-size: calc(112% + 0.1vw);
+    font-weight: 500;
+    line-height: 1.5rem;
 }
 
 a {
     text-decoration: none;
+    font-weight: 500;
 }
