@@ -18,6 +18,10 @@ $font-size: 0.9rem;
 
         &__listings {
             padding: 0em 2em 2em 2em;
+
+            &--category {
+                padding: 1em 2em 2em 2em;
+            }
         }
 
         &:before {
@@ -164,7 +168,7 @@ $font-size: 0.9rem;
                 }
         
                 &:hover {
-                    background-color: #E9F7F9;
+                    background-color: #f9f9f9;
                 }
         
                 &--highlight {
@@ -250,5 +254,9 @@ $font-size: 0.9rem;
                 }  
             }
     }
- }  
+ }
+ 
+ &--category {
+    margin: 4em auto;
+ }
 }

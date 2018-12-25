@@ -1,7 +1,25 @@
-%h1= "Kategorie: " + @category_name
+= render partial: "partials/header--light"
 
-%br/
-= link_to("zurück", root_path)
+%section.categoryHead
+    .wrapper
+        %h1= @category_name
+        %h2.h2--category
+            = "#{@jobs.count} #{@category_name} vorhanden." + (@jobs.any? ? " Letzter Post vom #{@date.created_at.strftime("%d.%m.%y")}" : "")
 
-- @jobs.each do |job|
-    %h2= link_to("#{job.position}", job_path(job))
+
+%section.cta.cta--category
+    %h2.h2.h2--ctaCategory= "#{@category_name} anbieten?"
+    = link_to("Jetzt Job inserieren", job_inserieren_path) 
+
+%section.jobs.jobs--category    
+    .jobs__listings.jobs__listings--category
+        - if @jobs.any?
+            %h2.h2 Alle Jobs:
+            %table.table
+                %tbody
+                    = render partial: "partials/job_listing", collection: @jobs, cached: true
+        - else 
+            %h2.h2= "Leider keine Jobs vorhanden."
+            = link_to("zurück zur Startseite", root_path)
+
+= render partial: "partials/footer"

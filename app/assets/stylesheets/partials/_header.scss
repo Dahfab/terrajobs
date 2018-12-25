@@ -18,7 +18,7 @@ $max-width: 110em;
     .navigation {
         &__item {
             
-            &--brand {
+            &--brand, &--brandLight {
                 margin-right: calc(37% + 0.1vw);
                 display: flex;
                 align-items: center;
@@ -80,6 +80,14 @@ $max-width: 110em;
                 a {
                     font-size: calc(100% + 0.4vw);
                     color: #000;
+                    font-weight: 800;
+                }
+            }
+
+            &--brandLight {
+                a {
+                    font-size: calc(100% + 0.4vw);
+                    color: #fff;
                     font-weight: 800;
                 }
             }
@@ -207,6 +215,14 @@ $max-width: 110em;
                     a {
                         font-size: calc(100% + 0.5vw);
                         color: #000;
+                        font-weight: 800;
+                    }
+                }
+
+                &--brandLight {
+                    a {
+                        font-size: calc(100% + 0.5vw);
+                        color: #fff;
                         font-weight: 800;
                     }
                 }

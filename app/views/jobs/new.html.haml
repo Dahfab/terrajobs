@@ -2,70 +2,68 @@
 
 = link_to("zurück", :root)
 
-= form_for @job, validate: true do |f|
-    = render "partials/error_messages", :target => @job 
-    = f.label :position, "Position"
-    = f.text_field :position, required: true
-    %br/
-    %br/
-    = f.label :description, "Beschreibung"
-    = f.text_area :description, required: true
-    %br/
-    %br/
-    = f.label :responsibilities, "Aufgaben"
-    = f.text_area :responsibilities
-    %br/
-    %br/
-    = f.label :requirements, "Anforderungen"
-    = f.text_area :requirements
-    %br/ 
-    %br/
-    = f.label :offers, "Wir bieten"
-    = f.text_area :offers
-    %br/ 
-    %br/
-    = f.label :how_to_apply, "Wie du dich bewirbst"
-    = f.text_area :how_to_apply
-    %br/
-    %br/
-    = f.label :apply_url, "Bewerbungslink"
-    = f.url_field :apply_url
-    %br/ 
-    %br/
-    = f.label :apply_mail, "Bewerbungs E-Mail"
-    = f.email_field :apply_mail
-    %br/ 
-    %br/
-    = f.label :apply_date, "Bewerbungsschluss"
-    = f.date_field :apply_date
-    %br/ 
-    %br/
-    = f.label :category_id, "Kategorie"
-    = f.select :category_id, @categories.map { |c| [c.name, c.id] }
-    %br/ 
-    %br/
-    = f.label :type_id, "Art"
-    = f.select :type_id, @types.map { |c| [c.name, c.id] }
-    %br/
-    %br/
-    = f.label :address, "Standort"
-    = f.text_field :address
-    %br/
-    %br/
-    = f.label :highlight, "Post hervorheben?"
-    = f.check_box :highlight, {}, "true", "false"
-    %br/
-    %br/
-    = f.fields_for :company do |c|
-        = c.label :name, "Firmenname"
-        = c.text_field :name, required: true
-        %br/
-        = c.label :mail, "E-Mail Adresse"
-        = c.email_field :mail, required: true
-        %br/
-        = c.label :logo, "Firmenlogo"
-        = c.file_field :logo
-        %br/
-        %br/
-    = submit_tag "Senden"
+%section.form
+    = form_for @job, validate: true do |f|
+        .form__job
+            .form__job__intro
+                %p Hier werden alle Jobinfos abgefragt
+            %ul.form__job__fields
+                = render "partials/error_messages", :target => @job 
+                %li
+                    = f.label :position, "Position"
+                    = f.text_field :position, required: true
+                %li
+                    = f.label :description, "Beschreibung"
+                    = f.text_area :description, required: true
+                %li
+                    = f.label :responsibilities, "Aufgaben"
+                    = f.text_area :responsibilities
+                %li
+                    = f.label :requirements, "Anforderungen"
+                    = f.text_area :requirements
+                %li
+                    = f.label :offers, "Wir bieten"
+                    = f.text_area :offers
+                %li
+                    = f.label :how_to_apply, "Wie du dich bewirbst"
+                    = f.text_area :how_to_apply
+                %li
+                    = f.label :apply_url, "Bewerbungslink"
+                    = f.url_field :apply_url
+                %li
+                    = f.label :apply_mail, "Bewerbungs E-Mail"
+                    = f.email_field :apply_mail
+                %li
+                    = f.label :apply_date, "Bewerbungsschluss"
+                    = f.date_field :apply_date
+                %li
+                    = f.label :category_id, "Kategorie"
+                    = f.select :category_id, @categories.map { |c| [c.name, c.id] }
+                %li
+                    = f.label :type_id, "Art"
+                    = f.select :type_id, @types.map { |c| [c.name, c.id] }
+                %li
+                    = f.label :address, "Standort"
+                    = f.text_field :address
+                %li
+                    = f.label :highlight, "Post hervorheben?"
+                    = f.check_box :highlight, {}, "true", "false"
 
+        .form__company
+            .form__company__intro
+                %p Hier werden alle Company Infos abgefragt
+            %ul.form__company__fields
+                = f.fields_for :company do |c|
+                    %li
+                        = c.label :name, "Firmenname"
+                        = c.text_field :name, required: true
+                    %li
+                        = c.label :mail, "E-Mail Adresse"
+                        = c.email_field :mail, required: true
+                    %li
+                        = c.label :logo, "Firmenlogo"
+                        = c.file_field :logo
+                
+                    = submit_tag "Senden"
+
+= render partial: "partials/footer"

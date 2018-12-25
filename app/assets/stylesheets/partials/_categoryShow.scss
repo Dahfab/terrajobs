@@ -1,0 +1,25 @@
+$page-width: 85vw;
+$max-width: 110em;
+
+.categoryHead {
+   height: 20em;
+   background: rgb(107,76,230);
+   background: -moz-linear-gradient(45deg, rgba(107,76,230,1) -40%, rgba(100,215,202,1) 120%);
+   background: -webkit-linear-gradient(45deg, rgba(107,76,230,1) -40%, rgba(100,215,202,1) 120%);
+   background: linear-gradient(45deg, rgba(107,76,230,1) -40%, rgba(100,215,202,1) 120%);
+   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6b4ce6",endColorstr="#64d7ca",GradientType=1);
+
+   .wrapper {
+       margin: 0 auto;
+       padding-top: 3em;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       width: $page-width;
+       max-width: $max-width;
+       height: 20em;
+       text-align: center;
+       color: #fff;
+   }
+}

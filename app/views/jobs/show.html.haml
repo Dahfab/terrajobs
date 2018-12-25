@@ -6,7 +6,7 @@
         .jobIntro__meta
             %span.category= @category.name
             %span.jobtype= @type.name
-        %h1.h1.h1--jobhead= sanitize @job.position
+        %h1.h1.h1--jobhead= sanitize @job.position.titleize
         .jobIntro__logo
             - if @job.company.logo.attached?
                 = image_tag(@job.company.logo_medium)
@@ -15,7 +15,7 @@
 
 %section.jobDescription
     .wrapper
-        .jobDescription__copy         
+        .jobDescription__copy      
             %h2.h2 Beschreibung:
             %p= sanitize @job.description
 
@@ -25,25 +25,33 @@
             %h2.h2 Anforderungen:
             %p= sanitize @job.requirements
 
-            %h2.h2 Wir bieten:
-            %p= sanitize @job.offers 
+            - if @job.offers.present?
+                %h2.h2 Wir bieten:
+                %p= sanitize @job.offers 
 
-            %h2.h2 Wie Sie sich bewerben:
-            %p= sanitize @job.how_to_apply           
+            - if @job.how_to_apply.present?
+                %h2.h2 Wie Sie sich bewerben:
+                %p= sanitize @job.how_to_apply           
 
         .jobDescription__sidebar
             %h2.h2.h2--sidebar Firma:
             %span= sanitize @job.company.name
 
+            %h2.h2.h2--sidebar Standort: 
+            %span= sanitize @job.address
+
             - if @job.apply_date.present?
-                %h2.h2 Bewerbungsschluss:
+                %h2.h2.h2--sidebar Bewerbungsschluss:
                 %span= @job.apply_date.strftime("%d.%m.%Y")
 
-            - if @job.company.mail.present?
-                %h2.h2.h2--sidebar E-Mail:
-                %span= sanitize @job.company.mail
+            - if @job.apply_mail.present?
+                %h2.h2.h2--sidebar E-Mail Kontakt:
+                %span= sanitize @job.apply_mail
 
-            = link_to("Jetzt bewerben", @job.apply_url)
+            -if @job.apply_url.present?
+                = link_to("Jetzt bewerben", "http://#{@job.apply_url}", target: "_blank")
+            - elsif @job.apply_mail.present?
+                = mail_to("#{@job.apply_mail}", "Jetzt bewerben")
 
 = render partial: "partials/footer"
 

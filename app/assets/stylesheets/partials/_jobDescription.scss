@@ -6,31 +6,57 @@ $max-width: 65em;
 
     .wrapper {
         max-width: $max-width;
-        margin-top: 6em;
         display: flex;
         flex-direction: column;
         justify-content: center;
 
         @media screen and (min-width: 65em) {
-            margin-top: 2em;
+            flex-direction: row;
+            width: $page-width;
+            margin: 0 auto;
         }
     }
 
     &__copy {
         width: $page-width;
         margin: 0 auto;
-        background-color: #fff;
         border-radius: 5px;
-        margin-bottom: 4rem;
+        margin-top: 9em;
+        margin-bottom: 4em;
     }
 
     &__sidebar {
         display: flex;
         flex-flow: column;
         justify-content: center;
-        background-color: #EDF8FA;
+        background-color: #fcfcfc;
         border-radius: 5px;
-        padding: 4rem 8%;
+        padding: 0 8%;
+        padding-top: 3em;
+        padding-bottom: 4em;
+
+        @media screen and (min-width: 65em) {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 4em;
+            flex-basis: 30em;
+            flex-grow: 1;
+            min-width: 15em;
+            max-width: 25em;
+            max-height: 30em;
+            padding: 1em 3em;
+            margin: 6em 0;
+            margin-top: 11em;
+            margin-left: 4em;
+            border-radius: 5px;
+            -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.20);
+            -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.20);
+            box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.20);
+        }
+
+        h2:first-child {
+            margin-top: 0;
+        }
 
         a {
             display: inline-block;
@@ -42,9 +68,13 @@ $max-width: 65em;
             color: #21524C;
             border: 0px;
             font-weight: 700;
-            font-size: 1.5rem;
+            font-size: calc(110% + 0.1vw);
             transition-duration: 200ms;
             text-align: center;
+
+            @media screen and (min-width: 65em) {
+                padding: 0.8em 0.5em;
+            }
     
             &:hover {
                 cursor: pointer;

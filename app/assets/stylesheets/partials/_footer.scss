@@ -7,6 +7,11 @@ $max-width: 65em;
     border-top: 10px solid #1B354E;
     color: #8AA3BB;
 
+    @media screen and (min-width: 65em) {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
 
     .wrapper {
         margin: 0 auto;
