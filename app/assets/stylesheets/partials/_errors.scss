@@ -1,7 +1,14 @@
-.field_with_errors {
-    padding: 2px;
-    background-color: red;
-    display: table;
+.field_with_errors:not(:first-child) {
+    padding: 0.5em;
+    background-color: #fec9cd;
+    border: 1px solid #eb828a;
+    border-radius: 5px;
+
+    .message {
+        display: inline-block;
+        margin: 0;
+        font-weight: 700;
+    }
   }
 
   

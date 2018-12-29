@@ -13,8 +13,8 @@ development:
   <<: *default
   database: terrajobs_development
   pool: 5
-  username: terrajobs
-  password: dbdbhkp
+  username: Fabian
+  password: 
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -23,8 +23,8 @@ test:
   <<: *default
   database: terrajobs_test
   pool: 5
-  username: terrajobs
-  password: dbdbhkp
+  username: Fabian
+  password: 
 
 production:
   <<: *default
@@ -32,5 +32,5 @@ production:
   prepared_statements: false
   advisory_locks: false
   pool: 5
-  username: terrajobs
-  password: dbdbhkp
+  username: Fabian
+  password: 

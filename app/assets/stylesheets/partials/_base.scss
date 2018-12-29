@@ -74,6 +74,7 @@ body {
         &--category {
             margin-top: 0em;
             font-size: calc(110% + 0.1vw);
+            font-weight: 500;
         }
 
         &--ctaCategory {
@@ -83,10 +84,14 @@ body {
         }
 }
 
-p {
+.p {
     font-size: calc(110%);
-    font-weight: 500;
+    font-weight: 200;
     line-height: 1.7rem;
+
+    &--intro {
+        font-weight: 500;
+    }
 }
 
 a {

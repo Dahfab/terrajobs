@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
         @jobs_today = Job.where(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day).order(created_at: :desc)
         @this_week = Job.where("created_at > ?", 1.week.ago).order(created_at: :desc)
         @this_month = Job.where("created_at > ?", 1.month.ago).order(created_at: :desc)
-        @category = Category.all
+        @category = Category.all.order(created_at: :desc)
         @types = Type.all
     end
 

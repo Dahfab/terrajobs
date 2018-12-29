@@ -44,11 +44,8 @@
                     = f.select :type_id, @types.map { |c| [c.name, c.id] }
                 %li
                     = f.label :address, "Standort"
-                    = f.text_field :address
-                %li
-                    = f.label :highlight, "Post hervorheben?"
-                    = f.check_box :highlight, {}, "true", "false"
-
+                    = f.text_field :address, required: true
+                
         .form__company
             .form__company__intro
                 %p Hier werden alle Company Infos abgefragt
@@ -63,7 +60,10 @@
                     %li
                         = c.label :logo, "Firmenlogo"
                         = c.file_field :logo
-                
-                    = submit_tag "Senden"
+
+        = f.label :highlight, "Post hervorheben?"
+        = f.check_box :highlight, {}, "true", "false"
+
+        = submit_tag "Senden"
 
 = render partial: "partials/footer"
