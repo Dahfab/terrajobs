@@ -104,6 +104,12 @@
                     %li Prioritäts Support
                     %li Aktiv für 90 anstatt 45 Tage
 
-            = submit_tag "Jetzt inserieren"
+            = hidden_field_tag 'stripeToken'
+            = hidden_field_tag 'stripeEmail'
+            = submit_tag "Jetzt inserieren", {id: "payment"}
+
+            -if flash[:notice].present?
+                #error_explanation
+                    %p= flash[:notice]
 
 = render partial: "partials/footer"

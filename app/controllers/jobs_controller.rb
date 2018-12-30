@@ -12,6 +12,27 @@ class JobsController < ApplicationController
     def create 
         @job = Job.new(job_params)
         @job.create_company(job_params[:company_attributes])
+
+        if params[:stripeEmail].present? && params[:stripeToken].present?
+            begin
+            customer = Stripe::Customer.create(
+                :email => params[:stripeEmail],
+                :source  => params[:stripeToken]
+            )
+
+            charge = Stripe::Charge.create(
+                :customer    => customer.id,
+                :amount      => 9900,
+                :description => 'Terrajobs Kunde',
+                :currency    => 'eur'
+              )
+
+            rescue Stripe::CardError => e
+                flash[:notice] = e.message
+                render action: :new
+            end
+        end
+
         if @job.save
             flash[:notice] = "Job erfolgreich angelegt! Seite aktualisieren." 
             redirect_to :root

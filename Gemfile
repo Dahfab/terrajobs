@@ -24,6 +24,7 @@ gem 'sorcery', '~> 0.13.0'
 gem 'rails_admin', '~> 1.4', '>= 1.4.2'
 #gem 'bullet', '~> 5.9'
 gem 'trix-rails', '~> 2.0', require: 'trix'
+gem 'stripe'
 
 #gem 'ruby-growl', '~> 4.1'
 

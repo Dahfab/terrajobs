@@ -18,9 +18,12 @@
 //= require_tree .
 
 $(document).ready(function() {  
+
+// Job Posting Checkboxes 
     $('#highlight_checkbox').change(function() {
         if($(this).is(":checked")) {
             $('#free_checkbox').prop('checked', false);
+
         }else {
             $('#free_checkbox').prop('checked', true);
         }   
@@ -31,4 +34,52 @@ $(document).ready(function() {
             $('#highlight_checkbox').prop('checked', false);
         } 
     });
+
+
+// Stripe Checkout
+    var handler = StripeCheckout.configure({
+        key: 'pk_test_oSdGE79t4Lyz2mlqIVbEzJAG',
+        image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+        locale: 'auto',
+        token: function(token) {
+        // You can access the token ID with `token.id`.
+        // Get the token ID to your server-side code for use.
+        document.getElementById("stripeToken").value = token.id;
+        document.getElementById("stripeEmail").value = token.email;
+        document.getElementById("new_job").submit();
+        }
+    });
+
+    function openStripe(e) {
+        handler.open({
+            name: 'Terrajobs',
+            description: 'Joblisting hervorheben',
+            currency: 'eur',
+            amount: 9900
+            });
+            e.preventDefault();
+    }
+    
+// Only open when highlight_checkbox is checked
+    $('#highlight_checkbox').change(function() {
+        if($(this).is(":checked")) {
+
+            document.getElementById('payment').addEventListener('click', openStripe);
+        
+            // Close Checkout on page navigation:
+            window.addEventListener('popstate', function() {
+                handler.close();
+            });
+
+        }else {
+            document.getElementById('payment').removeEventListener('click', openStripe, false);
+        } 
+        });
+
+    $('#free_checkbox').change(function() {
+        if($(this).is(":checked")) {
+            document.getElementById('payment').removeEventListener('click', openStripe, false);
+        } 
+    });
 });
+
