@@ -95,10 +95,13 @@ body {
             color: #2c3e32;
             border: 1px solid #84c69c;
             border-radius: 5px;
-            padding: 1em;
+            padding: 0.8em 1em;
             text-align: center;
             z-index: 20;
             max-width: 30em;
+            -webkit-box-shadow: 0 7px 14px 0 rgba(74, 77, 91, 0.1), 0 3px 4px 0 rgba(0, 0, 0, .05);
+            -moz-box-shadow: 0 7px 14px 0 rgba(74, 77, 91, 0.1), 0 3px 4px 0 rgba(0, 0, 0, .05);
+            box-shadow: 0 7px 14px 0 rgba(74, 77, 91, 0.1), 0 3px 4px 0 rgba(0, 0, 0, .05);
         }
 }
 

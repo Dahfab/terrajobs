@@ -151,10 +151,13 @@ $max-width: 65em;
 
         &__pricing {
             padding: 3em 2em 2em 2em;
-            background-color: #f9fdff;
-            border: 1px solid #c3d0e3;
+            background-color: #f9fcff;
+            border: 1px solid #d7e6f0;
             border-radius: 5px;
             margin-bottom: 2em;
+            -webkit-box-shadow: 0 7px 14px 0 rgba(74, 77, 91, 0.1), 0 3px 4px 0 rgba(0, 0, 0, .05);
+            -moz-box-shadow: 0 7px 14px 0 rgba(74, 77, 91, 0.1), 0 3px 4px 0 rgba(0, 0, 0, .05);
+            box-shadow: 0 7px 14px 0 rgba(74, 77, 91, 0.1), 0 3px 4px 0 rgba(0, 0, 0, .05);
 
             @media screen and (min-width: 65em) {
                 display: block;

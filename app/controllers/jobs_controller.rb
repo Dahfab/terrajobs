@@ -14,27 +14,11 @@ class JobsController < ApplicationController
         @job.create_company(job_params[:company_attributes])
 
         if params[:stripeEmail].present? && params[:stripeToken].present?
-            begin
-            customer = Stripe::Customer.create(
-                :email => params[:stripeEmail],
-                :source  => params[:stripeToken]
-            )
-
-            charge = Stripe::Charge.create(
-                :customer    => customer.id,
-                :amount      => 9900,
-                :description => 'Terrajobs Kunde',
-                :currency    => 'eur'
-              )
-
-            rescue Stripe::CardError => e
-                flash[:notice] = e.message
-                render action: :new
-            end
+            create_stripe_payment
         end
 
         if @job.save
-            flash[:notice] = "Job erfolgreich angelegt! Seite aktualisieren." 
+            flash[:notice] = "Vielen Dank! Job wurde erfolgreich angelegt." 
             redirect_to :root
         else
             render action: :new
@@ -93,6 +77,26 @@ class JobsController < ApplicationController
             :logo
         ] 
         )
+    end
+
+    def create_stripe_payment
+        begin
+            customer = Stripe::Customer.create(
+                :email => params[:stripeEmail],
+                :source  => params[:stripeToken]
+            )
+
+            charge = Stripe::Charge.create(
+                :customer    => customer.id,
+                :amount      => 9900,
+                :description => 'Terrajobs Kunde',
+                :currency    => 'eur'
+              )
+
+        rescue Stripe::CardError => e
+            flash[:notice] = e.message
+            render action: :new
+        end
     end
 
     def create_previous_url

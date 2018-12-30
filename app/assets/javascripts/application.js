@@ -39,7 +39,7 @@ $(document).ready(function() {
 // Stripe Checkout
     var handler = StripeCheckout.configure({
         key: 'pk_test_oSdGE79t4Lyz2mlqIVbEzJAG',
-        image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+        image: 'http://localhost:3000/assets/Logo3-ad022818a05e63788c432ae415c53ef219228eba59bfcb8b37b0fe477e44b705.svg',
         locale: 'auto',
         token: function(token) {
         // You can access the token ID with `token.id`.
