@@ -1,69 +1,109 @@
-%h1 Neuen Job inserieren
+%header.header
+    %nav#navigation.navigation
+        %ul.navigation__list
+            %li.navigation__item.navigation__item--posting
+                = image_tag 'Logo3', alt: '', class: ''
+                = link_to "Terrajobs", root_path
 
-= link_to("zurück", :root)
+.FormWrapper
+    %h1.h1 Geo-Job inserieren.
 
-%section.form
-    = form_for @job, validate: true do |f|
-        .form__job
-            .form__job__intro
-                %p Hier werden alle Jobinfos abgefragt
-            %ul.form__job__fields
-                = render "partials/error_messages", :target => @job 
-                %li
-                    = f.label :position, "Position"
-                    = f.text_field :position, required: true
-                %li
-                    = f.label :description, "Beschreibung"
-                    = f.text_area :description, required: true
-                %li
-                    = f.label :responsibilities, "Aufgaben"
-                    = f.text_area :responsibilities
-                %li
-                    = f.label :requirements, "Anforderungen"
-                    = f.text_area :requirements
-                %li
-                    = f.label :offers, "Wir bieten"
-                    = f.text_area :offers
-                %li
-                    = f.label :how_to_apply, "Wie du dich bewirbst"
-                    = f.text_area :how_to_apply
-                %li
-                    = f.label :apply_url, "Bewerbungslink"
-                    = f.url_field :apply_url
-                %li
-                    = f.label :apply_mail, "Bewerbungs E-Mail"
-                    = f.email_field :apply_mail
-                %li
-                    = f.label :apply_date, "Bewerbungsschluss"
-                    = f.date_field :apply_date
-                %li
-                    = f.label :category_id, "Kategorie"
-                    = f.select :category_id, @categories.map { |c| [c.name, c.id] }
-                %li
-                    = f.label :type_id, "Art"
-                    = f.select :type_id, @types.map { |c| [c.name, c.id] }
-                %li
-                    = f.label :address, "Standort"
-                    = f.text_field :address, required: true
-                
-        .form__company
-            .form__company__intro
-                %p Hier werden alle Company Infos abgefragt
-            %ul.form__company__fields
-                = f.fields_for :company do |c|
+    %section.form
+        = form_for @job, validate: true do |f|
+            .form__job
+                .form__job__intro
+                    %p.p 
+                        Bitte geben Sie hier die Jobdetails an.
+                        %br/
+                        %br/
+                        Alle hier getätigten Angeben werden 
+                        veröffentlicht und dienen dem Bewerber zur besseren Orientierung.
+                %ul.form__job__fields
+                    = render "partials/error_messages", :target => @job 
                     %li
-                        = c.label :name, "Firmenname"
-                        = c.text_field :name, required: true
+                        = f.label :position, "Position"
+                        = f.text_field :position, required: true
+                        %span.information * Pflicht
                     %li
-                        = c.label :mail, "E-Mail Adresse"
-                        = c.email_field :mail, required: true
+                        = f.label :description, "Beschreibung"
+                        = f.trix_editor :description, required: true
+                        %span.information * Pflicht
                     %li
-                        = c.label :logo, "Firmenlogo"
-                        = c.file_field :logo
+                        = f.label :responsibilities, "Aufgaben"
+                        = f.trix_editor :responsibilities
+                    %li
+                        = f.label :requirements, "Anforderungen"
+                        = f.trix_editor :requirements
+                    %li
+                        = f.label :offers, "Wir bieten"
+                        = f.trix_editor :offers
+                    %li
+                        = f.label :how_to_apply, "Wie du dich bewirbst"
+                        = f.trix_editor :how_to_apply
+                    %li
+                        = f.label :apply_url, "Bewerbungslink"
+                        = f.url_field :apply_url
+                        %span.information Link zu Ihrer Karriereseite o.Ä.
+                    %li
+                        = f.label :apply_mail, "Bewerbungs E-Mail"
+                        = f.email_field :apply_mail
+                        %span.information Wird öffentlich für den Bewerber angezeigt.
+                    %li
+                        = f.label :apply_date, "Bewerbungsschluss"
+                        = f.date_field :apply_date
+                    %li
+                        = f.label :category_id, "Kategorie"
+                        = f.select :category_id, @categories.map { |c| [c.name, c.id] }
+                        %span.information Bitte auswählen.
+                    %li
+                        = f.label :type_id, "Art"
+                        = f.select :type_id, @types.map { |c| [c.name, c.id] }
+                        %span.information Bitte auswählen.
+                    %li
+                        = f.label :address, "Standort"
+                        = f.text_field :address, required: true
+                        %span.information * Pflicht (z.B. Berlin, Köln etc.)
+                    
+            .form__company
+                .form__company__intro
+                    %p.p
+                        Bitte machen Sie hier Angaben zu Ihrer Firma. 
+                        %br/
+                        %br/
+                        Sie sollten Ihren Firmannemen angeben, sowie ein Logo hochladen. 
+                        Die hier angegebene E-Mail-Adresse wird nicht veröffentlicht. 
+                %ul.form__company__fields
+                    = f.fields_for :company do |c|
+                        %li
+                            = c.label :name, "Firmenname"
+                            = c.text_field :name, required: true
+                            %span.information * Pflicht
+                        %li
+                            = c.label :mail, "E-Mail Adresse"
+                            = c.email_field :mail, required: true
+                            %span.information * Pflicht. Nicht öffentlich. Nur zu Rechnungszwecken.
+                        %li
+                            = c.label :logo, "Firmenlogo"
+                            = c.file_field :logo
 
-        = f.label :highlight, "Post hervorheben?"
-        = f.check_box :highlight, {}, "true", "false"
+            .form__pricing
+                %input{:type => "checkbox", id: "free_checkbox", checked: "checked"}
+                %label Kostenlos veröffentlichen  
+                %ul
+                    %li Aktiv für 45 Tage
+                    %li Feature auf Social Media (Facebook + Twitter)
+ 
+            .form__pricing
+                = f.check_box :highlight, {id: "highlight_checkbox"}, "true", "false"
+                = f.label :highlight, "Post hervorheben? - 99€"
+                %ul
+                    %li.highlight Auf der Startseite hervorheben - gelb
+                    %li.highlight Auf Kategorieseiten hervorheben - gelb
+                    %li Feature auf Social Media (Facebook + Twitter)
+                    %li Feature im Job-Newsletter
+                    %li Prioritäts Support
+                    %li Aktiv für 90 anstatt 45 Tage
 
-        = submit_tag "Senden"
+            = submit_tag "Jetzt inserieren"
 
 = render partial: "partials/footer"

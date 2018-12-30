@@ -13,7 +13,7 @@ class JobsController < ApplicationController
         @job = Job.new(job_params)
         @job.create_company(job_params[:company_attributes])
         if @job.save
-            flash[:notice] = "Job angelegt!" 
+            flash[:notice] = "Job erfolgreich angelegt! Seite aktualisieren." 
             redirect_to :root
         else
             render action: :new

@@ -14,7 +14,22 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require trix
 //= require rails.validations
 //= require_tree .
 
+$(document).ready(function() {  
+    $('#highlight_checkbox').change(function() {
+        if($(this).is(":checked")) {
+            $('#free_checkbox').prop('checked', false);
+        }else {
+            $('#free_checkbox').prop('checked', true);
+        }   
+    });
 
+    $('#free_checkbox').change(function() {
+        if($(this).is(":checked")) {
+            $('#highlight_checkbox').prop('checked', false);
+        } 
+    });
+});

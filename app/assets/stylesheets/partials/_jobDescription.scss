@@ -23,6 +23,19 @@ $max-width: 65em;
         border-radius: 5px;
         margin-top: 9em;
         margin-bottom: 4em;
+
+        ul {
+            padding-left: 2em;
+            li {
+                margin-bottom: 1em;
+            }
+        }
+
+        blockquote {
+            margin: 0 0 0 0.3em;
+            padding: 0 0 0 0.6em;
+            border-left: 0.3em solid #ccc;
+        }
     }
 
     &__sidebar {
