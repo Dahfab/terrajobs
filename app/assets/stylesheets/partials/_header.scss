@@ -20,7 +20,7 @@ $max-width: 110em;
         &__item {
             
             &--brand, &--brandLight {
-                margin-right: calc(37% + 0.1vw);
+                margin-right: calc(45% + 0.1vw);
                 display: flex;
                 align-items: center;
 
@@ -37,7 +37,7 @@ $max-width: 110em;
                 }
 
                 @media screen and (min-width: 100em) {
-                    margin-right: calc(60% + 0.1vw); 
+                    margin-right: calc(65% + 0.1vw); 
                 }
             }
             
@@ -62,7 +62,6 @@ $max-width: 110em;
         }
 
         @media screen and (max-width: 65em) {
-            //position: static;
       
             ul {
                 background: #fff;
@@ -170,7 +169,6 @@ $max-width: 110em;
         &:target {
             ul {
               visibility: visible;
-              //transition-delay: 0s;
             }
 
             .navigation__trigger {
