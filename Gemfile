@@ -25,6 +25,8 @@ gem 'rails_admin', '~> 1.4', '>= 1.4.2'
 #gem 'bullet', '~> 5.9'
 gem 'trix-rails', '~> 2.0', require: 'trix'
 gem 'stripe'
+gem 'sucker_punch', '~> 2.0'
+#gem 'sidekiq'
 
 #gem 'ruby-growl', '~> 4.1'
 
@@ -40,7 +42,7 @@ gem 'coffee-rails', '~> 4.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
+#gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

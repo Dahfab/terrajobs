@@ -6,6 +6,7 @@ class JobsController < ApplicationController
 
     def new 
         @job = Job.new
+        expires_in 7.days, public: true
         @job.build_company 
     end
 
@@ -27,7 +28,7 @@ class JobsController < ApplicationController
 
     def show
         @job = Job.friendly.find(params[:id])
-        fresh_when @job, public: true
+        expires_in 7.days, public: true
         @category = Category.friendly.find(@job.category_id)
         @type = Type.find(@job.type_id)
         @previous_url = URI(request.referrer).path 

@@ -8,6 +8,10 @@ $font-size: 0.8rem;
     width: $page-width;
     position: relative;
     margin-top: 7em;
+    background: asset_url(terrajobs-satellite-image);
+    background-repeat: no-repeat;
+    background-position-x: -9999px;
+    background-position-y: -9999px;
 
     @media screen and (min-width: 30em) {
         margin-top: 8em;

@@ -36,6 +36,7 @@ body {
         margin: 0.67em auto;
         font-weight: 900;
         max-width: 25em;
+        line-height: 2.5rem;
 
         @media screen and (min-width: 65em) {
             margin: 0;
@@ -112,6 +113,14 @@ body {
 
     &--intro {
         font-weight: 500;
+    }
+
+    a {
+        color: #a2fce4;
+
+        &:hover {
+            text-decoration: underline; 
+        }
     }
 }
 

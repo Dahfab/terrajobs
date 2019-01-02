@@ -52,7 +52,8 @@ $max-width: 65em;
                 }
                 
                 p {
-                    font-size: calc(95% + 0.1vw);
+                    font-size: calc(85% + 0.1vw);
+                    line-height: 1.4rem;
                 }
             }
 
@@ -101,7 +102,7 @@ $max-width: 65em;
             }
 
             &__links {
-
+                font-size: 0.9rem;
                 .list {
                     list-style-type: none;
                     padding: 0;
@@ -120,6 +121,10 @@ $max-width: 65em;
                             &:hover {
                                 color: #E6EBEF;
                             }
+                        }
+
+                        .copyright {
+                            font-weight: 200;
                         }
                     }
                 }

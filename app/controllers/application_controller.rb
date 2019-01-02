@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
    before_action :initialize_variables, only: :index
     
     def index
+        ExpireJob.perform_async(@job_free, @job_highlight)
+
         if params[:search].present?
             @search_query = params[:search]
             define_radius
@@ -10,12 +12,20 @@ class ApplicationController < ActionController::Base
         exlude_present_jobs
     end
 
+    def impressum
+    end
+
+    def datenschutz
+    end
+
     private
     def not_authenticated
         redirect_to main_app.backend_path
     end
 
     def initialize_variables 
+        @job_free = Job.where(highlight: false)
+        @job_highlight = Job.where(highlight: true)
         @jobs = Job.where("created_at < ?", 1.month.ago).order(created_at: :desc)
         @jobs_today = Job.where(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day).order(created_at: :desc)
         @this_week = Job.where("created_at > ?", 1.week.ago).order(created_at: :desc)

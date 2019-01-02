@@ -8,7 +8,7 @@ $max-width: 110em;
 
     @media screen and (min-width: 65em) {
         height: 50vw;
-        background-image: asset_url(background2);
+        background-image: asset_url(intro-background);
         background-repeat: no-repeat;
         background-position: top right; 
         background-size: 50% auto; 
@@ -35,7 +35,7 @@ $max-width: 110em;
     
         a {
             display: inline-block;
-            background: rgb(107,76,230);
+            background: #6b4ce6;
             background: -moz-linear-gradient(45deg, rgba(107,76,230,1) -40%, rgba(100,215,202,1) 120%);
             background: -webkit-linear-gradient(45deg, rgba(107,76,230,1) -40%, rgba(100,215,202,1) 120%);
             background: linear-gradient(45deg, rgba(107,76,230,1) -40%, rgba(100,215,202,1) 120%);
@@ -55,7 +55,7 @@ $max-width: 110em;
             }
         }
 
-        p {
+        .p {
             display: block;
             margin: 1em auto;
             max-width: 30em;
@@ -65,7 +65,36 @@ $max-width: 110em;
                 margin-bottom: 1em;
                 max-width: 25em;
             }
+
+            &--page {
+                width: 100%;
+                max-width: 100%;
+                text-align: left;
+            }
         }
+
+        &--page {
+            width: $page-width;
+            max-width: 65em;
+
+            a {
+                display: inline;
+                padding: 0;
+                border-radius: 0;
+                background: transparent;
+                color: #5090D5;
+                font-size: 1.2rem;
+                font-weight: 200;
+
+                &:hover {
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+
+    &--page {
+        height: auto;
     }
 }
 

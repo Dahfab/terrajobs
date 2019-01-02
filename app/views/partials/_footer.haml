@@ -7,36 +7,36 @@
             %span in Bochum
             %p.p
                 Finde deinen passenden Job in der Geo-, und Umweltbranche. 
-                Jobs in den Bereichen Vermessung bis hin zu GIS. 
+                Jobs in Bereichen wie Vermessung, GIS oder Nachhaltigkeit. 
                 Übersichtlich und eingebunden in eine zentrale Community rund um Geojobs.
             .wrapper__item__links
                 %ul.list
                     %li.list__item
-                        = link_to "Impressum"
+                        %span.copyright= "© " "#{Date.today.year}" " Terrajobs"
                     %li.list__item
-                        = link_to "Datenschutz"
+                        = link_to "Impressum", impressum_path
+                    %li.list__item
+                        = link_to "Datenschutz", datenschutz_path
         %nav.wrapper__item.wrapper__item--nav
             %ul.list.list--first
                 %span.list__head Produkt 
                 %li.list__item 
-                    = link_to "Jobs finden"
-                %li.list__item  
-                    = link_to "Commnity" 
+                    = link_to "Jobs finden", root_path
                 %li.list__item  
                     = link_to "Blog"
                 %li.list__item  
-                    = link_to "Job inserieren"
+                    = link_to "Job inserieren", job_inserieren_path
             %ul.list.list--second
                 %span.list__head Jobs  
                 %li.list__item  
-                    = link_to "GIS Jobs"
+                    = link_to "GIS Jobs", category_path("gis-jobs")
                 %li.list__item  
-                    = link_to "Geographie Jobs"
+                    = link_to "Geographie Jobs", category_path("geographie-jobs")
                 %li.list__item  
-                    = link_to "Geologie Jobs"
+                    = link_to "Geologie Jobs", category_path("geologie-jobs")
                 %li.list__item  
-                    = link_to "Vermessung Jobs"
+                    = link_to "Vermessung Jobs", category_path("vermessung-jobs")
                 %li.list__item  
-                    = link_to "Green-Jobs"
+                    = link_to "Green-Jobs", category_path("green-jobs")
                 %li.list__item  
-                    = link_to "Sonstige Jobs"
+                    = link_to "Sonstige Jobs", category_path("sonstige-jobs")

@@ -39,7 +39,7 @@ $(document).ready(function() {
 // Stripe Checkout
     var handler = StripeCheckout.configure({
         key: 'pk_test_oSdGE79t4Lyz2mlqIVbEzJAG',
-        image: 'http://localhost:3000/assets/Logo3-ad022818a05e63788c432ae415c53ef219228eba59bfcb8b37b0fe477e44b705.svg',
+        image: 'http://localhost:3000/assets/terrajobs-stripe.png',
         locale: 'auto',
         token: function(token) {
         // You can access the token ID with `token.id`.
@@ -55,7 +55,7 @@ $(document).ready(function() {
             name: 'Terrajobs',
             description: 'Joblisting hervorheben',
             currency: 'eur',
-            amount: 9900
+            amount: 9900,
             });
             e.preventDefault();
     }
