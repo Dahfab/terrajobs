@@ -20,7 +20,7 @@
 $(document).ready(function() {  
 
 // Job Posting Checkboxes 
-    $('#highlight_checkbox').change(function() {
+    $('#job_highlight_checkbox').change(function() {
         if($(this).is(":checked")) {
             $('#free_checkbox').prop('checked', false);
 
@@ -31,7 +31,7 @@ $(document).ready(function() {
 
     $('#free_checkbox').change(function() {
         if($(this).is(":checked")) {
-            $('#highlight_checkbox').prop('checked', false);
+            $('#job_highlight_checkbox').prop('checked', false);
         } 
     });
 
@@ -60,8 +60,8 @@ $(document).ready(function() {
             e.preventDefault();
     }
     
-// Only open when highlight_checkbox is checked
-    $('#highlight_checkbox').change(function() {
+// Only open when job_job_highlight_checkbox is checked
+    $('#job_highlight_checkbox').change(function() {
         if($(this).is(":checked")) {
 
             document.getElementById('payment').addEventListener('click', openStripe);

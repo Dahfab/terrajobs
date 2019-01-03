@@ -8,6 +8,7 @@ class JobsController < ApplicationController
         @job = Job.new
         expires_in 7.days, public: true
         @job.build_company 
+        render layout: "layouts/job-new"
     end
 
     def create 

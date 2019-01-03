@@ -8,7 +8,7 @@
         %h1.h1.h1--jobhead= sanitize @job.position.titleize
         .jobIntro__logo
             - if @job.company.logo.attached?
-                = image_tag(@job.company.logo_medium)
+                = image_tag(@job.company.logo_medium, alt: "geo-company-logo")
             - else
                 %span Kein Logo
 

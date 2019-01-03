@@ -19,7 +19,8 @@
                         = link_to "Datenschutz", datenschutz_path
         %nav.wrapper__item.wrapper__item--nav
             %ul.list.list--first
-                %span.list__head Produkt 
+                %li.list__item.list__item--head  
+                    Produkt 
                 %li.list__item 
                     = link_to "Jobs finden", root_path
                 %li.list__item  
@@ -27,7 +28,8 @@
                 %li.list__item  
                     = link_to "Job inserieren", job_inserieren_path
             %ul.list.list--second
-                %span.list__head Jobs  
+                %li.list__item.list__item--head  
+                    Jobs  
                 %li.list__item  
                     = link_to "GIS Jobs", category_path("gis-jobs")
                 %li.list__item  
@@ -40,3 +42,12 @@
                     = link_to "Green-Jobs", category_path("green-jobs")
                 %li.list__item  
                     = link_to "Sonstige Jobs", category_path("sonstige-jobs")
+    
+    :javascript
+        /* Defer CSS File */
+        var giftofspeed = document.createElement('link');
+        giftofspeed.rel = 'stylesheet';
+        giftofspeed.href = 'https://use.fontawesome.com/releases/v5.5.0/css/all.css';
+        giftofspeed.type = 'text/css';
+        var godefer = document.getElementsByTagName('link')[0];
+        godefer.parentNode.insertBefore(giftofspeed, godefer);

@@ -88,14 +88,14 @@
 
             .form__pricing
                 %input{:type => "checkbox", id: "free_checkbox", checked: "checked"}
-                %label Kostenlos veröffentlichen  
+                %label{for: "free_checkbox"} Kostenlos veröffentlichen  
                 %ul
                     %li Aktiv für 45 Tage
                     %li Feature auf Social Media (Facebook + Twitter)
  
             .form__pricing
-                = f.check_box :highlight, {id: "highlight_checkbox"}, "true", "false"
-                = f.label :highlight, "Post hervorheben? - 99€"
+                = f.check_box :highlight, {id: "job_highlight_checkbox"}, "true", "false"
+                = f.label(:highlight_checkbox, "Post hervorheben? - 99€")
                 %ul
                     %li.highlight Auf der Startseite hervorheben - gelb
                     %li.highlight Auf Kategorieseiten hervorheben - gelb
