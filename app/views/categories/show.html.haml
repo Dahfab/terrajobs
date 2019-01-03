@@ -22,8 +22,9 @@
             %table.table
                 %tbody
                     = render partial: "partials/job_listing", collection: @jobs, cached: true
-        - else 
-            %h2.h2= "Leider keine Jobs vorhanden."
-            = link_to("zurück zur Startseite", root_path)
+        - else
+            .notFound 
+                %h2.h2= "Leider keine Jobs vorhanden."
+                = link_to("zurück zur Startseite", root_path)
 
 = render partial: "partials/footer"

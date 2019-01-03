@@ -279,5 +279,10 @@ $font-size: 0.9rem;
  
  &--category {
     margin: 4em auto;
+
+    .notFound {
+        padding: 0 1em;
+        text-align: center;
+    }
  }
 }

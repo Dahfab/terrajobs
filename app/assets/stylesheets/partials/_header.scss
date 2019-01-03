@@ -105,8 +105,13 @@ $max-width: 110em;
             &--brandLight {
                 a {
                     font-size: calc(100% + 0.4vw);
-                    color: #fff;
+                    color: #000;
                     font-weight: 800;
+
+                }
+
+                img {
+                    margin-right: 0.2em;
                 }
             }
 
