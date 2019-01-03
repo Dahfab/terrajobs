@@ -1,3 +1,6 @@
+= title "#{sanitize @job.position.titleize}" " - " "#{sanitize @job.address.titleize}"
+= meta_tag :description, "Stellenangebot: " "#{sanitize @job.company.name.titleize}" " sucht einen / eine "  "#{sanitize @job.position.titleize}" " in " "#{sanitize @job.address.titleize}"". Jetzt bewerben ✓"
+
 = render partial: "partials/header--dark"
 
 %section.jobIntro

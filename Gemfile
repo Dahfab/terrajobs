@@ -27,8 +27,8 @@ gem 'trix-rails', '~> 2.0', require: 'trix'
 gem 'stripe'
 gem 'sucker_punch', '~> 2.0'
 #gem 'sidekiq'
-
 #gem 'ruby-growl', '~> 4.1'
+gem 'rails-i18n'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

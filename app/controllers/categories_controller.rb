@@ -8,6 +8,7 @@ class CategoriesController < ApplicationController
         @category_id = Category.friendly.find(params[:id])
         @jobs = Job.where(category_id: @category_id).order(created_at: :desc)
         @date = @jobs.order("created_at").first
+        @month = Date.today
     end
 
     private

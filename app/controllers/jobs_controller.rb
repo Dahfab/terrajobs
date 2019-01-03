@@ -34,6 +34,7 @@ class JobsController < ApplicationController
         @type = Type.find(@job.type_id)
         @previous_url = URI(request.referrer).path 
         create_previous_url
+        @date = Date.today
     end
 
     def edit 
