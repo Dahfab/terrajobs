@@ -21,7 +21,7 @@
         
         .jobs__search
             = form_tag root_path, method: :get, autocomplete: :off do
-                = label_tag :search, "Suche"
+                = label_tag :search, "Wo?"
                 = text_field_tag :search, nil, placeholder: "Berlin etc.", maxlength: 20, class: "jobs__search__input"
                 = label_tag :radius, "Radius"
                 = select_tag :radius, options_for_select([ "10", "20", "40", "60", "100" ]), prompt: "und Umgebung (km)", class: "jobs__search__select"
