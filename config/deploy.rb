@@ -1,5 +1,5 @@
 # Change these
-server '104.248.242.142', port: 80, roles: [:web, :app, :db], primary: true
+server '104.248.242.142', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:Dahfab/terrajobs.git'
 set :application,     'terrajobs'
