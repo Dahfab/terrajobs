@@ -28,7 +28,7 @@ test:
 
 production:
   <<: *default
-  database: rails
+  database: terrajobs_production
   prepared_statements: false
   advisory_locks: false
   pool: 5
