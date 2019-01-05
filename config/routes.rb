@@ -8,6 +8,6 @@ Rails.application.routes.draw do
     get "impressum", to: "application#impressum"
     get "datenschutz", to: "application#datenschutz"
     resources :sessions, only: [:create]
-    resources :jobs, except: [:new]
+    resources :jobs, except: [:new], id: :slug
     resources :categories, path: "", only: :show, id: :slug
 end
