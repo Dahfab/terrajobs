@@ -33,7 +33,6 @@ class JobsController < ApplicationController
         @category = Category.friendly.find(@job.category_id)
         @type = Type.find(@job.type_id)
         @date = Date.today
-        create_previous_url
     end
 
     def edit 
