@@ -99,15 +99,4 @@ class JobsController < ApplicationController
             render action: :new
         end
     end
-
-    def create_previous_url
-        if URI(request.referrer).present?
-            @previous_url = URI(request.referrer).path 
-            if @previous_url =~ /\/(.+)\/(.+)/i
-                @previous_url = root_path 
-            else
-                @previous_url = request.referrer
-            end
-        end
-    end
 end
