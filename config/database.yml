@@ -33,4 +33,4 @@ production:
   advisory_locks: false
   pool: 5
   username: rails
-  password: 09218383dc95af7426869678a33915e0
+  password: <%= ENV['DROPLET_DB_PASSWORD'] %>
