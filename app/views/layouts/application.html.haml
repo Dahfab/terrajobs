@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+%html{:lang => "de"}
+    %head
+        %meta{:charset => "UTF-8"}/
+        %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+        %meta{:content => "ie=edge", "http-equiv" => "X-UA-Compatible"}/
+        %title= "#{content_for?(:title) ? "#{yield(:title)+ " | "}" : "" }" "Terrajobs"
+        %meta{name: "description", content: "#{yield_meta_tag(:description, "Mit Terrajobs finden Sie Jobs aus der Geo- und Umweltbranche. Egal ob GIS, Geographie, Geologie oder auch Green-Jobs. Wir begleiten Sie in Ihrer Geo-Karriere.") }"}/
+        %meta{name: "keywords", content: "#{yield_meta_tag(:keywords, "GIS, Vermessung, Geographie, Geologie, Fernerkundung, Green-Job, Nachhaltigkeit, Jobsuche, Jobs, Job, Stellenangebot, Stellenanzeigen, Arbeit") }"}/
+        %meta{:content => "/images/apple-touch-icon.png", :property => "og:logo", :size => "180x180"}/
+        %link{:href => "/images/apple-touch-icon.png", :rel => "apple-touch-icon", :sizes => "180x180"}/
+        %link{:href => "/images/favicon-16x16.png", :rel => "icon", :sizes => "16x16", :type => "image/png"}/
+        %link{:href => "/images/favicon-32x32.png", :rel => "icon", :sizes => "32x32", :type => "image/png"}/
+        = favicon_link_tag asset_path('favicon-16x16.png')
+        = csrf_meta_tags 
+        = csp_meta_tag
+        = stylesheet_link_tag "application", media: "all"
+   
+    %body
+        = yield
+
