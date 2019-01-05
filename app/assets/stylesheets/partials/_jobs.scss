@@ -173,6 +173,8 @@ $font-size: 0.9rem;
     }
 
     &__listings {
+        background-color: #fff;
+
         .table {
             table-layout: fixed;
             border-collapse: collapse;
