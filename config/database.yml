@@ -14,7 +14,7 @@ development:
   database: terrajobs_development
   pool: 5
   username: Fabian
-  password: dbdbhkp123
+  password: <%= ENV['DB_PASSWORD'] %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -24,7 +24,7 @@ test:
   database: terrajobs_test
   pool: 5
   username: Fabian
-  password: dbdbhkp123
+  password: <%= ENV['DB_PASSWORD'] %>
 
 production:
   <<: *default
