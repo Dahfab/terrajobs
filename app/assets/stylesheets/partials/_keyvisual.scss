@@ -10,6 +10,10 @@
         animation: MoveUpDown 5s linear infinite;
         z-index: 2;
 
+        @media screen and (min-width: 30em) {
+            animation: MoveUpDown_landscape 5s linear infinite;
+        }
+
         @media screen and (min-width: 65em) {
             top: 15%;
             left: 45%;
@@ -28,6 +32,18 @@
                 }
             }
 
+        @keyframes MoveUpDown_landscape {
+            0% {
+                transform: translateY(-70%);
+            }
+            50% {
+                transform: translateY(-80%);
+            }
+            100% {
+                transform: translateY(-70%);
+                }
+        }
+
         @keyframes Intro {
             0% {
                 transform: translateY(10%);
@@ -38,7 +54,7 @@
             100% {
                 transform: translateY(10%);
                 }
-            }
+        }
 
         
         img {
@@ -67,6 +83,10 @@
         animation: scale 5s linear infinite;
         z-index: 1;
 
+        @media screen and (min-width: 30em) {
+            animation: scale_landscape 5s linear infinite;
+        }
+
         @media screen and (min-width: 65em) {
             top: 28%;
             left: 45%;
@@ -83,7 +103,19 @@
             100% {
                 transform: scale(1) translateY(-45%);
                 }
+        }
+
+        @keyframes scale_landscape {
+            0% {
+                transform: scale(1) translateY(-55%);
             }
+            50% {
+                transform: scale(0.9) translateY(-60%);
+            }
+            100% {
+                transform: scale(1) translateY(-55%);
+                }
+        }
 
         @keyframes scaleIntro {
             0% {
@@ -95,7 +127,7 @@
             100% {
                 transform: scale(1) translateY(-6%);
                 }
-            }
+        }
 
         img {
             width: 90vw;
