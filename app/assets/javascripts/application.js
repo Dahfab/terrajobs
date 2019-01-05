@@ -39,7 +39,7 @@ $(document).ready(function() {
 // Stripe Checkout
     var handler = StripeCheckout.configure({
         key: 'pk_test_oSdGE79t4Lyz2mlqIVbEzJAG',
-        image: 'http://localhost:3000/assets/terrajobs-stripe.png',
+        image: '/images/terrajobs-stripe.png',
         locale: 'auto',
         token: function(token) {
         // You can access the token ID with `token.id`.
