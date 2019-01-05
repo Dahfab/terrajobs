@@ -66,21 +66,27 @@ $font-size: 0.9rem;
         &__input {
             width: 19em;
             padding: 0.7em;
-            border-top-left-radius: 5px;
-            border-bottom-left-radius: 5px;
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
-            border: 0px;
-            -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.20);
-            -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.20);
-            box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.20);
+            border-radius: 5px;
+            border: 1px solid #bfbfbf;
 
+            @media screen and (min-width: 30em) {
+                border: 1px solid #bbc7dc;
+            }
+
+            @media screen and (min-width: 50em) {
+                position: relative;
+                margin-right: 0.3em;
+                border: 1px solid #ededed;
+                -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.20);
+                -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.20);
+                box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.20);
+            }
 
             &:focus {
                 outline: none;
-                -webkit-box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.30);
-                -moz-box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.30);
-                box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.30);
+                -webkit-box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.20);
+                -moz-box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.20);
+                box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.20); 
             }
         }
 
@@ -91,10 +97,7 @@ $font-size: 0.9rem;
             margin-right: 0.5em;
             padding: 0.7em;
             border: 0px;
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-            border-top-right-radius: 5px;
-            border-bottom-right-radius: 5px;
+            border-radius: 5px;
             -webkit-appearance: none;
             color: #505050;
             -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.20);
@@ -103,7 +106,6 @@ $font-size: 0.9rem;
 
             @media screen and (min-width: 50em) {
                 position: relative;
-                left: -4px;
             }
 
             &:hover {
