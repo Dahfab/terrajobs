@@ -8,7 +8,7 @@ class Job < ApplicationRecord
    after_validation :geocode
 
    extend FriendlyId
-   friendly_id :slug_candidates, use: [:slugged, :history]
+   friendly_id :slug_candidates, use: [:slugged, :finders, :history]
 
    def slug_candidates
     [
