@@ -32,9 +32,8 @@ class JobsController < ApplicationController
         expires_in 7.days, public: true
         @category = Category.friendly.find(@job.category_id)
         @type = Type.find(@job.type_id)
-        @previous_url = URI(request.referrer).path 
-        create_previous_url
         @date = Date.today
+        create_previous_url
     end
 
     def edit 
@@ -103,10 +102,13 @@ class JobsController < ApplicationController
     end
 
     def create_previous_url
-        if @previous_url =~ /\/(.+)\/(.+)/i
-            @previous_url = root_path 
-        else
-            @previous_url = request.referrer
+        if URI(request.referrer).present?
+            @previous_url = URI(request.referrer).path 
+            if @previous_url =~ /\/(.+)\/(.+)/i
+                @previous_url = root_path 
+            else
+                @previous_url = request.referrer
+            end
         end
     end
 end
