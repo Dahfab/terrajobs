@@ -7,6 +7,7 @@ gem 'concurrent-ruby', '~> 1.1.0'
 
 gem 'pg'
 gem 'puma', '~> 3.11'
+gem 'dalli', '~> 2.7', '>= 2.7.9'
 
 gem 'sass-rails', '~> 5.0'
 gem 'haml', '~> 5.0', '>= 5.0.4'
