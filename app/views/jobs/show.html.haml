@@ -21,11 +21,13 @@
             %h2.h2 Beschreibung:
             %p.p= sanitize @job.description
 
-            %h2.h2 Aufgaben:
-            %p.p= sanitize @job.responsibilities
-
-            %h2.h2 Anforderungen:
-            %p.p= sanitize @job.requirements
+            - if @job.responsibilities.present?
+                %h2.h2 Aufgaben:
+                %p.p= sanitize @job.responsibilities
+            
+            - if @job.requirements.present?
+                %h2.h2 Anforderungen:
+                %p.p= sanitize @job.requirements
 
             - if @job.offers.present?
                 %h2.h2 Wir bieten:
