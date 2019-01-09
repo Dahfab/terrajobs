@@ -51,7 +51,7 @@
                 %span= sanitize @job.apply_mail
 
             -if @job.apply_url.present?
-                = link_to("Jetzt bewerben", "http://#{@job.apply_url}", target: "_blank")
+                = link_to("Jetzt bewerben", "#{@job.apply_url}", target: "_blank", rel: "noopener")
             - elsif @job.apply_mail.present?
                 = mail_to("#{@job.apply_mail}", "Jetzt bewerben")
 
