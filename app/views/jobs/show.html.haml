@@ -1,5 +1,5 @@
-= title "#{sanitize @job.position.titleize}" " - " "#{sanitize @job.address.titleize}"
-= meta_tag :description, "Stellenangebot: " "#{sanitize @job.company.name.titleize}" " sucht einen / eine "  "#{sanitize @job.position.titleize}" " in " "#{sanitize @job.address.titleize}"". Jetzt bewerben ✓"
+= title "#{sanitize @job.position}" " - " "#{sanitize @job.address}"
+= meta_tag :description, "Stellenangebot: " "#{sanitize @job.company.name}" " sucht einen / eine "  "#{sanitize @job.position}" " in " "#{sanitize @job.address}"". Jetzt bewerben ✓"
 
 = render partial: "partials/header--dark"
 
@@ -8,7 +8,7 @@
         .jobIntro__meta
             %span.category= @category.name
             %span.jobtype= @type.name
-        %h1.h1.h1--jobhead= sanitize @job.position.titleize
+        %h1.h1.h1--jobhead= sanitize @job.position
         .jobIntro__logo
             - if @job.company.logo.attached?
                 = image_tag(@job.company.logo_medium, alt: "geo-company-logo")
