@@ -39,7 +39,7 @@ $(document).ready(function() {
 
 // Stripe Checkout
     var handler = StripeCheckout.configure({
-        key: 'pk_test_oSdGE79t4Lyz2mlqIVbEzJAG',
+        key: 'pk_live_0NfLaTta5GBsb92xPrGozJKX',
         image: '/images/terrajobs-stripe.png',
         locale: 'auto',
         token: function(token) {
