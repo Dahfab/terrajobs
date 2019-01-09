@@ -15,6 +15,7 @@ gem 'haml', '~> 5.0', '>= 5.0.4'
 gem "haml-rails", "~> 1.0"
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 gem 'rails-i18n'
+gem 'cookies_eu'
 
 gem 'friendly_id', '~> 5.2', '>= 5.2.4'
 gem 'client_side_validations', '~> 11.1', '>= 11.1.3'
