@@ -5,10 +5,17 @@ class Job < ApplicationRecord
    delegate :name, to: :type, prefix: true
    validates :position, :description, :address, presence: {message: "Darf nicht leer sein"}, on: :create 
    geocoded_by :address
+   before_validation :full_url
    after_validation :geocode
 
    extend FriendlyId
    friendly_id :slug_candidates, use: [:slugged, :finders, :history]
+
+   def full_url
+    unless self.apply_url[/^http?:\/\//] || self.apply_url[/^https?:\/\//]
+      self.apply_url = "http://#{self.apply_url}"
+    end
+  end
 
    def slug_candidates
     [
