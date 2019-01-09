@@ -20,6 +20,13 @@
         = csrf_meta_tags 
         = csp_meta_tag
         = stylesheet_link_tag "application", media: "all"
+        - if Rails.env.production?
+            %script{:async => "", :await => "", :src => "https://www.googletagmanager.com/gtag/js?id=UA-85998646-3"}
+            :javascript
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'UA-85998646-3');
    
     %body
         = yield

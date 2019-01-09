@@ -23,6 +23,13 @@
         = javascript_include_tag "application", :defer => "defer"
         = javascript_include_tag "rails.validations": "reload", :defer => "defer"
         = javascript_include_tag "https://checkout.stripe.com/checkout.js", :defer => "defer"
+        - if Rails.env.production?
+            %script{:async => "", :await => "", :src => "https://www.googletagmanager.com/gtag/js?id=UA-85998646-3"}
+            :javascript
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'UA-85998646-3');
     
     %body
         = yield
