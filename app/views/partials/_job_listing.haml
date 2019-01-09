@@ -4,8 +4,8 @@
             - if job_listing.company.logo.attached?
                 = image_tag(job_listing.company.logo_small, alt: "geo-company-logo")     
         %td.table__item.table__item--jobtitle
-            %span= job_listing.company.name.titleize
-            %h2.h2.h2--jobtitle= job_listing.position.titleize
+            %span= job_listing.company.name
+            %h2.h2.h2--jobtitle= job_listing.position
         %td.table__item.table__item--location
             %i.fas.fa-map-marker-alt 
             %span= job_listing.address
@@ -19,8 +19,8 @@
             - if job_listing.company.logo.attached?
                 = image_tag(job_listing.company.logo_small, alt: "geo-company-logo")
         %td.table__item.table__item--jobtitle
-            %span= job_listing.company.name.titleize
-            %h2.h2.h2--jobtitle= job_listing.position.titleize
+            %span= job_listing.company.name
+            %h2.h2.h2--jobtitle= job_listing.position
         %td.table__item.table__item--location
             %i.fas.fa-map-marker-alt
             %span= job_listing.address
