@@ -15,8 +15,8 @@
 //= require activestorage
 //= require trix
 //= require rails.validations
-//= require cookies_eu
 //= require_tree .
+//= require cookies_eu
 
 $(document).ready(function() {  
 
