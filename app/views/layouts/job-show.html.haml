@@ -7,7 +7,7 @@
         %meta{:content => "summary", :name => "twitter:card"}/
         %meta{:content => "#{sanitize @job.position}", :property => "og:title"}/
         %meta{:content => "#{sanitize @job.company.name}" " sucht einen / eine "  "#{sanitize @job.position}" " in " "#{sanitize @job.address}", :property => "og:description"}/
-        %meta{:content => "https://terrajobs.de", :property => "og:url"}/
+        %meta{:content => "https://terrajobs.de#{request.fullpath}", :property => "og:url"}/
         %meta{:content => "/images/terrajobs-sharing.jpg", :property => "og:image"}/
         %meta{:content => "1200", :property => "og:image:width"}/
         %meta{:content => "1200", :property => "og:image:height"}/

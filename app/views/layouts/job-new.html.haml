@@ -9,7 +9,10 @@
         %meta{:content => "Geo-Jobs: GIS, Vermessung, Green-Jobs & Mehr", :property => "twitter:title"}/
         %meta{:content => "Mit Terrajobs finden Sie Jobs aus der Geo- und Umweltbranche. Egal ob GIS, Geographie, Geologie oder auch Green-Jobs. Wir begleiten Sie in Ihrer Geo-Karriere.", :property => "og:description"}/
         %meta{:content => "Mit Terrajobs finden Sie Jobs aus der Geo- und Umweltbranche. Egal ob GIS, Geographie, Geologie oder auch Green-Jobs. Wir begleiten Sie in Ihrer Geo-Karriere.", :property => "twitter:description"}/
-        %meta{:content => "https://terrajobs.de", :property => "og:url"}/
+        %meta{:content => "https://terrajobs.de#{request.fullpath}", :property => "og:url"}/
+        %meta{:content => "/images/terrajobs-sharing.jpg", :property => "og:image"}/
+        %meta{:content => "1200", :property => "og:image:width"}/
+        %meta{:content => "1200", :property => "og:image:height"}/
         %meta{:content => "/images/apple-touch-icon.png", :property => "og:logo", :size => "180x180"}/
         %title= "#{content_for?(:title) ? "#{yield(:title)+ " | "}" : "" }" "Terrajobs"
         %meta{name: "description", content: "#{yield_meta_tag(:description, "Mit Terrajobs finden Sie Jobs aus der Geo- und Umweltbranche. Egal ob GIS, Geographie, Geologie oder auch Green-Jobs. Wir begleiten Sie in Ihrer Geo-Karriere.") }"}/
