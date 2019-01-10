@@ -8,7 +8,7 @@
         %meta{:content => "@terrajobs_de", :property => "twitter:site"}/
         %meta{:content => "#{sanitize @job.position}", :property => "twitter:title"}/
         %meta{:content => "#{sanitize @job.company.name}" " sucht einen / eine "  "#{sanitize @job.position}" " in " "#{sanitize @job.address}", :property => "twitter:description"}/
-        %meta{:content => "/images/twitter-share.jpg", :property => "twitter:image"}/
+        %meta{:content => "https://terrajobs.de/images/twitter-share.jpg", :property => "twitter:image"}/
         %meta{:content => "terrajobs-company-logo", :property => "twitter:image:alt"}/
         %meta{:content => "#{sanitize @job.position}", :property => "og:title"}/
         %meta{:content => "#{sanitize @job.company.name}" " sucht einen / eine "  "#{sanitize @job.position}" " in " "#{sanitize @job.address}", :property => "og:description"}/
