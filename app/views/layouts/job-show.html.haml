@@ -4,7 +4,7 @@
         %meta{:charset => "UTF-8"}/
         %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
         %meta{:content => "ie=edge", "http-equiv" => "X-UA-Compatible"}/
-        %meta{:content => "summary_large_image", :name => "twitter:card"}/
+        %meta{:content => "summary", :name => "twitter:card"}/
         %meta{:content => "@terrajobs_de", :name => "twitter:site"}/
         %meta{:content => "#{sanitize @job.position}", :property => "og:title"}/
         %meta{:content => "#{sanitize @job.position}", :property => "twitter:title"}/
@@ -12,6 +12,9 @@
         %meta{:content => "#{sanitize @job.company.name}" " sucht einen / eine "  "#{sanitize @job.position}" " in " "#{sanitize @job.address}", :property => "twitter:description"}/
         %meta{:content => "https://terrajobs.de", :property => "og:url"}/
         %meta{:content => "/images/terrajobs-sharing.jpg", :property => "og:image"}/
+        %meta{:content => "1200", :property => "og:image:width"}/
+        %meta{:content => "1200", :property => "og:image:height"}/
+        %meta{:content => "website", :property => "og:type"}/
         %title= "#{content_for?(:title) ? "#{yield(:title)+ " | "}" : "" }" "Terrajobs"
         %meta{name: "description", content: "#{yield_meta_tag(:description, "Mit Terrajobs finden Sie Jobs aus der Geo- und Umweltbranche. Egal ob GIS, Geographie, Geologie oder auch Green-Jobs. Wir begleiten Sie in Ihrer Geo-Karriere.") }"}/
         %meta{name: "keywords", content: "#{yield_meta_tag(:keywords, "GIS, Vermessung, Geographie, Geologie, Fernerkundung, Green-Job, Nachhaltigkeit, Jobsuche, Jobs, Job, Stellenangebot, Stellenanzeigen, Arbeit") }"}/
