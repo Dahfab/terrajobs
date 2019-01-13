@@ -30,6 +30,7 @@
         = javascript_include_tag "application", :defer => "defer"
         = javascript_include_tag "rails.validations": "reload", :defer => "defer"
         = javascript_include_tag "https://checkout.stripe.com/checkout.js", :defer => "defer"
+        = javascript_include_tag "https://my.hellobar.com/56b18126aa7e25c88ff71e74cc52a2765f7a3dd5.js", :defer => "defer", :charset => "utf-8", :async => "async"
         - if Rails.env.production?
             %script{:async => "", :await => "", :src => "https://www.googletagmanager.com/gtag/js?id=UA-85998646-3"}
             :javascript
