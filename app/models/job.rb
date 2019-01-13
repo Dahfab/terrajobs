@@ -12,8 +12,10 @@ class Job < ApplicationRecord
    friendly_id :slug_candidates, use: [:slugged, :finders, :history]
 
    def full_url
-    unless self.apply_url[/^http?:\/\//] || self.apply_url[/^https?:\/\//]
-      self.apply_url = "http://#{self.apply_url}"
+    if self.apply_url.present?
+        unless self.apply_url[/^http?:\/\//] || self.apply_url[/^https?:\/\//]
+            self.apply_url = "http://#{self.apply_url}"
+        end
     end
   end
 
