@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://terrajobs.de/</loc>
+  <lastmod>2019-01-14T13:50:05+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://terrajobs.de/blog/</loc>
+  <lastmod>2019-01-14T13:50:05+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://terrajobs.de/job-inserieren</loc>
+  <lastmod>2019-01-14T13:50:05+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://terrajobs.de/gis-jobs</loc>
+  <lastmod>2019-01-14T13:50:05+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://terrajobs.de/geographie-jobs</loc>
+  <lastmod>2019-01-14T13:50:05+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://terrajobs.de/geologie-jobs</loc>
+  <lastmod>2019-01-14T13:50:05+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://terrajobs.de/vermessung-jobs</loc>
+  <lastmod>2019-01-14T13:50:05+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://terrajobs.de/green-jobs</loc>
+  <lastmod>2019-01-14T13:50:05+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://terrajobs.de/sonstige-jobs</loc>
+  <lastmod>2019-01-14T13:50:05+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://terrajobs.de/blog/geo-blog-coming-soon/</loc>
+  <lastmod>2019-01-14T13:50:05+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://terrajobs.de/blog/author/terrajobs/</loc>
+  <lastmod>2019-01-14T13:50:05+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+</urlset>
