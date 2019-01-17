@@ -8,49 +8,94 @@
 
 
 <url>
-  <loc>https://terrajobs.de/</loc>
-  <lastmod>2019-01-14T13:50:05+00:00</lastmod>
-  <priority>1.00</priority>
+<loc>https://terrajobs.de/</loc>
+<lastmod>2019-01-17T22:12:23+00:00</lastmod>
+<priority>1.00</priority>
 </url>
 <url>
-  <loc>https://terrajobs.de/blog/</loc>
-  <lastmod>2019-01-14T13:50:05+00:00</lastmod>
-  <priority>0.90</priority>
+<loc>https://terrajobs.de/blog/</loc>
+<lastmod>2019-01-17T22:12:23+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://terrajobs.de/job-inserieren</loc>
-  <lastmod>2019-01-14T13:50:05+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://terrajobs.de/job-inserieren</loc>
+<lastmod>2019-01-17T22:12:23+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://terrajobs.de/gis-jobs</loc>
-  <lastmod>2019-01-14T13:50:05+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://terrajobs.de/gis-jobs</loc>
+<lastmod>2019-01-17T22:12:23+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://terrajobs.de/geographie-jobs</loc>
-  <lastmod>2019-01-14T13:50:05+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://terrajobs.de/geographie-jobs</loc>
+<lastmod>2019-01-17T22:12:23+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://terrajobs.de/geologie-jobs</loc>
-  <lastmod>2019-01-14T13:50:05+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://terrajobs.de/geologie-jobs</loc>
+<lastmod>2019-01-17T22:12:23+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://terrajobs.de/vermessung-jobs</loc>
-  <lastmod>2019-01-14T13:50:05+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://terrajobs.de/vermessung-jobs</loc>
+<lastmod>2019-01-17T22:12:23+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://terrajobs.de/green-jobs</loc>
-  <lastmod>2019-01-14T13:50:05+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://terrajobs.de/green-jobs</loc>
+<lastmod>2019-01-17T22:12:23+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://terrajobs.de/sonstige-jobs</loc>
-  <lastmod>2019-01-14T13:50:05+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://terrajobs.de/sonstige-jobs</loc>
+<lastmod>2019-01-17T22:12:23+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://terrajobs.de/blog/geo-blog-coming-soon/</loc>
+<lastmod>2019-01-17T22:12:23+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://terrajobs.de/blog/author/terrajobs/</loc>
+<lastmod>2019-01-17T22:12:23+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://terrajobs.de/job-inserieren/</loc>
+<lastmod>2019-01-17T22:12:23+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://terrajobs.de/gis-jobs/</loc>
+<lastmod>2019-01-17T22:12:23+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://terrajobs.de/geographie-jobs/</loc>
+<lastmod>2019-01-17T22:12:23+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://terrajobs.de/geologie-jobs/</loc>
+<lastmod>2019-01-17T22:12:23+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://terrajobs.de/vermessung-jobs/</loc>
+<lastmod>2019-01-17T22:12:23+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://terrajobs.de/green-jobs/</loc>
+<lastmod>2019-01-17T22:12:23+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://terrajobs.de/sonstige-jobs/</loc>
+<lastmod>2019-01-17T22:12:23+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 
 </urlset>
