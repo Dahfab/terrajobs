@@ -16,7 +16,6 @@
 //= require trix
 //= require rails.validations
 //= require_tree .
-//= require cookies_eu
 
 $(document).ready(function() {  
 
