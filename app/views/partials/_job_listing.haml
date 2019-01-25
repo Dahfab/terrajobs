@@ -20,7 +20,7 @@
             "title": "#{job_listing.position}",
             "datePosted": "#{job_listing.created_at.strftime("%Y-%m-%d")}",
             "validThrough": "#{job_listing.apply_date.present? ? job_listing.apply_date.strftime("%Y-%m-%d") : ""}",
-            "image": "#{job_listing.company.logo.attached? ? url_for(job_listing.company.logo, :host => "terrajobs.de") : ""}",
+            "image": "#{job_listing.company.logo.attached? ? url_for(job_listing.company.logo) : ""}",
             "employmentType": "#{job_listing.type_name == "Vollzeit" ? "full-time" : job_listing.type_name == "Teilzeit" ? "part-time" : job_listing.type_name == "Praktikum" ? "internship" : ""}",
             "description": "#{job_listing.description}",
             "responsibilities": "#{job_listing.responsibilities}",
@@ -38,7 +38,7 @@
             "hiringOrganization": {
             "@type": "Organization",
             "name": "#{job_listing.company.name}",
-            "logo": "#{job_listing.company.logo.attached? ? url_for(job_listing.company.logo, :host => "terrajobs.de") : ""}"
+            "logo": "#{job_listing.company.logo.attached? ? url_for(job_listing.company.logo) : ""}"
             }}
 - else
     %tr{class: "table__row", onclick: "window.location='#{job_path(job_listing)}'"}
@@ -62,7 +62,7 @@
             "title": "#{job_listing.position}",
             "datePosted": "#{job_listing.created_at.strftime("%Y-%m-%d")}",
             "validThrough": "#{job_listing.apply_date.present? ? job_listing.apply_date.strftime("%Y-%m-%d") : ""}",
-            "image": "#{job_listing.company.logo.attached? ? url_for(job_listing.company.logo, :host => "terrajobs.de") : ""}",
+            "image": "#{job_listing.company.logo.attached? ? url_for(job_listing.company.logo) : ""}",
             "employmentType": "#{job_listing.type_name == "Vollzeit" ? "full-time" : job_listing.type_name == "Teilzeit" ? "part-time" : job_listing.type_name == "Praktikum" ? "internship" : ""}",
             "description": "#{job_listing.description}",
             "responsibilities": "#{job_listing.responsibilities}",
@@ -80,7 +80,7 @@
             "hiringOrganization": {
             "@type": "Organization",
             "name": "#{job_listing.company.name}",
-            "logo": "#{job_listing.company.logo.attached? ? url_for(job_listing.company.logo, :host => "terrajobs.de") : ""}"
+            "logo": "#{job_listing.company.logo.attached? ? url_for(job_listing.company.logo) : ""}"
             }}
 
 
