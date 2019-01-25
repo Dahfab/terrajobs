@@ -38,7 +38,7 @@
             "hiringOrganization": {
             "@type": "Organization",
             "name": "#{job_listing.company.name}",
-            "logo": "#{job_listing.company.logo.attached? ? job_listing.company.logo.public_url : ""}"
+            "logo": "#{job_listing.company.logo.attached? ? job_listing.company.logo.service_url : ""}"
             }}
 - else
     %tr{class: "table__row", onclick: "window.location='#{job_path(job_listing)}'"}
@@ -80,7 +80,7 @@
             "hiringOrganization": {
             "@type": "Organization",
             "name": "#{job_listing.company.name}",
-            "logo": "#{job_listing.company.logo.attached? ? job_listing.company.logo.public_url : ""}"
+            "logo": "#{job_listing.company.logo.attached? ? job_listing.company.logo.service_url : ""}"
             }}
 
 
