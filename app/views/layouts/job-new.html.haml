@@ -64,6 +64,27 @@
             }();
             drift.SNIPPET_VERSION = '0.3.1';
             drift.load('arcfu6mrkcw4');
+            
+        %script{type: "application/ld+json"}
+            { "@context": "http://schema.org",
+            "@type": "Organization",
+            "name": "Terrajobs",
+            "url": "https://terrajobs.de",
+            "logo": "https://terrajobs.de/assets/terrajobs-logo-a182ef097293d0237b28741b787bbfd31228818901db223c30dfd4566011bd73.svg",
+            "foundingDate": "2019",
+            "founders": [
+            {
+            "@type": "Person",
+            "name": "Fabian Dahlke"
+            }],
+            "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Support",
+            "email": "contact@terrajobs.de"
+            },
+            "sameAs": [ 
+            "https://twitter.com/terrajobs_de",
+            ]}
     
     %body
         = yield
