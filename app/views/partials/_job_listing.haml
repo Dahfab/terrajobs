@@ -13,32 +13,33 @@
             %span= job_listing.type_name
         %td.table__item.table__item--posted
             %span= job_listing.created_at.strftime("%d.%m.%y")
-    %script{type: "application/ld+json"}
-        { "@context": "http://schema.org",
-        "@type": "JobPosting",
-        "title": "#{job_listing.position}",
-        "datePosted": "#{job_listing.created_at.strftime("%Y-%m-%d")}",
-        "validThrough": "#{job_listing.apply_date.present? ? job_listing.apply_date.strftime("%Y-%m-%d") : ""}",
-        "image": "#{job_listing.company.logo.attached? ? url_for(job_listing.company.logo) : ""}",
-        "employmentType": "#{job_listing.type_name == "Vollzeit" ? "full-time" : job_listing.type_name == "Teilzeit" ? "part-time" : job_listing.type_name == "Praktikum" ? "internship" : ""}",
-        "description": "#{job_listing.description}",
-        "responsibilities": "#{job_listing.responsibilities}",
-        "experienceRequirements": "#{job_listing.requirements}",
-        "incentiveCompensation": "#{job_listing.offers}",
-        "industry": "#{job_listing.category.name}",
-        "jobLocation": {
-        "@type": "Place",
-        "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "#{job_listing.address}"
-        }
-        },
-        "salaryCurrency": "EUR",
-        "hiringOrganization": {
-        "@type": "Organization",
-        "name": "#{job_listing.company.name}",
-        "logo": "#{job_listing.company.logo.attached? ? url_for(job_listing.company.logo) : ""}"
-        }}
+    - if Rails.env.production?
+        %script{type: "application/ld+json"}
+            { "@context": "http://schema.org",
+            "@type": "JobPosting",
+            "title": "#{job_listing.position}",
+            "datePosted": "#{job_listing.created_at.strftime("%Y-%m-%d")}",
+            "validThrough": "#{job_listing.apply_date.present? ? job_listing.apply_date.strftime("%Y-%m-%d") : ""}",
+            "image": "#{job_listing.company.logo.attached? ? url_for(job_listing.company.logo) : ""}",
+            "employmentType": "#{job_listing.type_name == "Vollzeit" ? "full-time" : job_listing.type_name == "Teilzeit" ? "part-time" : job_listing.type_name == "Praktikum" ? "internship" : ""}",
+            "description": "#{job_listing.description}",
+            "responsibilities": "#{job_listing.responsibilities}",
+            "experienceRequirements": "#{job_listing.requirements}",
+            "incentiveCompensation": "#{job_listing.offers}",
+            "industry": "#{job_listing.category.name}",
+            "jobLocation": {
+            "@type": "Place",
+            "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "#{job_listing.address}"
+            }
+            },
+            "salaryCurrency": "EUR",
+            "hiringOrganization": {
+            "@type": "Organization",
+            "name": "#{job_listing.company.name}",
+            "logo": "#{job_listing.company.logo.attached? ? job_listing.company.logo.public_url : ""}"
+            }}
 - else
     %tr{class: "table__row", onclick: "window.location='#{job_path(job_listing)}'"}
         %td.table__item.table__item--companylogo
@@ -54,31 +55,32 @@
             %span= job_listing.type_name
         %td.table__item.table__item--posted
             %span= job_listing.created_at.strftime("%d.%m.%y")
-    %script{type: "application/ld+json"}
-        { "@context": "http://schema.org",
-        "@type": "JobPosting",
-        "title": "#{job_listing.position}",
-        "datePosted": "#{job_listing.created_at.strftime("%Y-%m-%d")}",
-        "validThrough": "#{job_listing.apply_date.present? ? job_listing.apply_date.strftime("%Y-%m-%d") : ""}",
-        "image": "#{job_listing.company.logo.attached? ? url_for(job_listing.company.logo) : ""}",
-        "employmentType": "#{job_listing.type_name == "Vollzeit" ? "full-time" : job_listing.type_name == "Teilzeit" ? "part-time" : job_listing.type_name == "Praktikum" ? "internship" : ""}",
-        "description": "#{job_listing.description}",
-        "responsibilities": "#{job_listing.responsibilities}",
-        "experienceRequirements": "#{job_listing.requirements}",
-        "incentiveCompensation": "#{job_listing.offers}",
-        "industry": "#{job_listing.category.name}",
-        "jobLocation": {
-        "@type": "Place",
-        "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "#{job_listing.address}"
-        }
-        },
-        "salaryCurrency": "EUR",
-        "hiringOrganization": {
-        "@type": "Organization",
-        "name": "#{job_listing.company.name}",
-        "logo": "#{job_listing.company.logo.attached? ? url_for(job_listing.company.logo) : ""}"
-        }}
+    - if Rails.env.production?
+        %script{type: "application/ld+json"}
+            { "@context": "http://schema.org",
+            "@type": "JobPosting",
+            "title": "#{job_listing.position}",
+            "datePosted": "#{job_listing.created_at.strftime("%Y-%m-%d")}",
+            "validThrough": "#{job_listing.apply_date.present? ? job_listing.apply_date.strftime("%Y-%m-%d") : ""}",
+            "image": "#{job_listing.company.logo.attached? ? url_for(job_listing.company.logo) : ""}",
+            "employmentType": "#{job_listing.type_name == "Vollzeit" ? "full-time" : job_listing.type_name == "Teilzeit" ? "part-time" : job_listing.type_name == "Praktikum" ? "internship" : ""}",
+            "description": "#{job_listing.description}",
+            "responsibilities": "#{job_listing.responsibilities}",
+            "experienceRequirements": "#{job_listing.requirements}",
+            "incentiveCompensation": "#{job_listing.offers}",
+            "industry": "#{job_listing.category.name}",
+            "jobLocation": {
+            "@type": "Place",
+            "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "#{job_listing.address}"
+            }
+            },
+            "salaryCurrency": "EUR",
+            "hiringOrganization": {
+            "@type": "Organization",
+            "name": "#{job_listing.company.name}",
+            "logo": "#{job_listing.company.logo.attached? ? job_listing.company.logo.public_url : ""}"
+            }}
 
 
