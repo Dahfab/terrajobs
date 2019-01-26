@@ -57,6 +57,33 @@
             - elsif @job.apply_mail.present?
                 = mail_to("#{@job.apply_mail}", "Jetzt bewerben")
 
+    %script{type: "application/ld+json"}
+        { "@context": "http://schema.org",
+        "@type": "JobPosting",
+        "title": "#{@job.position}",
+        "datePosted": "#{@job.created_at.strftime("%Y-%m-%d")}",
+        "validThrough": "#{@job.apply_date.present? ? @job.apply_date.strftime("%Y-%m-%d") : ""}",
+        "image": "#{@job.company.logo.attached? ? "https://terrajobs.de#{url_for(@job.company.logo)}" : ""}",
+        "employmentType": "#{@job.type_name == "Vollzeit" ? "full-time" : @job.type_name == "Teilzeit" ? "part-time" : @job.type_name == "Praktikum" ? "internship" : ""}",
+        "description": "#{strip_tags(@job.description)}",
+        "responsibilities": "#{strip_tags(@job.responsibilities)}",
+        "experienceRequirements": "#{strip_tags(@job.requirements)}",
+        "incentiveCompensation": "#{strip_tags(@job.offers)}",
+        "industry": "#{@job.category.name}",
+        "jobLocation": {
+        "@type": "Place",
+        "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "#{@job.address}"
+        }
+        },
+        "salaryCurrency": "EUR",
+        "hiringOrganization": {
+        "@type": "Organization",
+        "name": "#{@job.company.name}",
+        "logo": "#{@job.company.logo.attached? ? "https://terrajobs.de#{url_for(@job.company.logo)}" : ""}"
+        }}
+
 = render partial: "partials/footer"
 
 
