@@ -13,9 +13,8 @@
             %strong
                 Vermessung 
             oder auch 
-            %strong
-                Green-Jobs.
-        = link_to "Jobs durchsuchen >", {anchor: "jobs"}
+            %strong= link_to "Green-Jobs.", "https://terrajobs.de/blog/was-sind-green-jobs/"
+        = link_to "Jobs durchsuchen >", {anchor: "jobs"}, {class: "button"}
 
         .keyvisual.keyvisual--mockup
             = image_tag 'geo-karriere-mockup', alt: 'geo-karriere-berg-pfad'
