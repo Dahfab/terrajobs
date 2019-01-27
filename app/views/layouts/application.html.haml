@@ -17,7 +17,7 @@
         %meta{:content => "1200", :property => "og:image:width"}/
         %meta{:content => "1200", :property => "og:image:height"}/
         %meta{:content => "https://terrajobs.de/images/apple-touch-icon.png", :property => "og:logo", :size => "180x180"}/
-        %title= "#{content_for?(:title) == "Terrajobs - Die Plattform für Geojobs in Deutschland" ?  "#{yield(:title)}" :  "#{yield(:title)+ " | Terrajobs"}" : "" }"
+        %title= "#{content_for?(:title) == "Terrajobs - Die Plattform für Geojobs in Deutschland" ?  "#{yield(:title)}" :  "#{yield(:title) + " | Terrajobs"}" }"
         %meta{name: "description", content: "#{yield_meta_tag(:description, "Mit Terrajobs finden Sie Jobs aus der Geo- und Umweltbranche. Egal ob GIS, Geographie, Geologie oder auch Green-Jobs. Wir begleiten Sie in Ihrer Geo-Karriere.") }"}/
         %meta{name: "keywords", content: "#{yield_meta_tag(:keywords, "GIS, Vermessung, Geographie, Geologie, Fernerkundung, Green-Job, Nachhaltigkeit, Jobsuche, Jobs, Job, Stellenangebot, Stellenanzeigen, Arbeit") }"}/
         %link{:href => "https://terrajobs.de/images/apple-touch-icon.png", :rel => "apple-touch-icon", :sizes => "180x180"}/
