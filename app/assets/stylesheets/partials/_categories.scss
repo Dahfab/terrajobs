@@ -54,7 +54,7 @@ $font-size: 0.8rem;
             height: 9em;
             padding: 1em 1em;
             border-radius: 7px;
-            white-space: nowrap;
+            text-align: center;
             background-color: #fff;
             -webkit-box-shadow: 0 7px 14px 0 rgba(59,65,94, 0.1), 0 3px 6px 0 rgba(0, 0, 0, .07);
             -moz-box-shadow: 0 7px 14px 0 rgba(59,65,94, 0.1), 0 3px 6px 0 rgba(0, 0, 0, .07);
@@ -95,11 +95,11 @@ $font-size: 0.8rem;
                 margin-bottom: 0.5em;
             }
             &:nth-of-type(5):before {
-                content: "🌿 "; 
+                content: "🌐 "; 
                 margin-bottom: 0.5em;
             }
             &:nth-of-type(6):before {
-                content: "🌍"; 
+                content: "💻 "; 
                 margin-bottom: 0.5em;
             }
 
