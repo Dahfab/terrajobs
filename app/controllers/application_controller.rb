@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
    before_action :initialize_variables, only: :index
     
     def index
-        ExpireJob.perform_async(@job_free, @job_highlight)
+        #ExpireJob.perform_async(@job_free, @job_highlight)
 
         if params[:search].present?
             @search_query = params[:search]
