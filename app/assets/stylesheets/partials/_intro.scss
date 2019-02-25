@@ -82,6 +82,7 @@ $max-width: 110em;
         &--page {
             width: $page-width;
             max-width: 65em;
+            text-align: left;
 
             a {
                 display: inline;

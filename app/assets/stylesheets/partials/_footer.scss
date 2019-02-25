@@ -76,11 +76,13 @@ $max-width: 65em;
 
                     &--first {
                         vertical-align: top;
+                        margin: 4em 0.5em;
                     }
 
                     &--second {
                         @media screen and (min-width: 65em) {
                             margin-right: 0em;
+                            margin-left: 2em;
                         }
                     }
 

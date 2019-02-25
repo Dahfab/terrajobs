@@ -53,6 +53,18 @@ body {
         hyphens: auto;
         color: #000;
     }
+
+    &--page {
+        text-align: left;
+
+        @media screen and (min-width: 30em) {
+            text-align: center;
+        }
+
+        @media screen and (min-width: 65em) {
+            text-align: left;
+        }
+    }
 }
 
 .h2 {

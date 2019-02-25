@@ -12,6 +12,9 @@ class ApplicationController < ActionController::Base
         exlude_present_jobs
     end
 
+    def geojobs
+    end
+
     def impressum
     end
 
