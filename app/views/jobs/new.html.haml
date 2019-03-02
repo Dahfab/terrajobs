@@ -15,7 +15,10 @@
         Alle Anzeigen können 
         %u kostenlos 
         veröffentlicht werden. Einfach untenstehendes Formular ausfüllen und absenden.
-
+    %p 
+        Gerne übertragen wir Ihre PDF Version auf unsere Plattform. Nehmen Sie hierzu einfach 
+        = mail_to "fabian.dahlke@gmail.com", "Kontakt" 
+        auf. 
     %section.form
         = form_for @job, validate: true do |f|
             .form__job
@@ -107,7 +110,7 @@
                 %ul
                     %li.highlight Auf der Startseite hervorheben - gelb
                     %li.highlight Auf Kategorieseiten hervorheben - gelb
-                    %li Feature auf Social Media (Twitter)
+                    %li Feature auf Social Media (Twitter + Facebook)
                     %li Prioritäts Support
                     %li Aktiv für 90 anstatt 45 Tage
 
