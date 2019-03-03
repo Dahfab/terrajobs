@@ -105,6 +105,10 @@ $max-width: 65em;
 
             &__links {
                 font-size: 0.9rem;
+
+                i {
+                    font-size: 1.5em;
+                }
                 .list {
                     list-style-type: none;
                     padding: 0;
