@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+%html{:lang => "de"}
+    %head
+        %meta{:charset => "UTF-8"}/
+        %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+        %meta{:content => "ie=edge", "http-equiv" => "X-UA-Compatible"}/
+        %meta{:content => "summary", :name => "twitter:card"}/
+        %meta{:content => "@terrajobs_de", :property => "twitter:site"}/
+        %meta{:content => "Terrajobs - Die Jobbörse für Geojobs in Deutschland", :property => "twitter:title"}/
+        %meta{:content => "Mit Terrajobs finden Sie passende Geojobs in Deutschland. Egal ob GIS, Geographie, Geologie oder auch Software Entwicklung. Wir begleiten Sie in Ihrer Geo-Karriere.", :property => "twitter:description"}/
+        %meta{:content => "https://terrajobs.de/images/twitter-share.jpg", :property => "twitter:image"}/
+        %meta{:content => "terrajobs-company-logo", :property => "twitter:image:alt"}/
+        %meta{:content => "Terrajobs - Die Jobbörse für Geojobs in Deutschland", :property => "og:title"}/
+        %meta{:content => "Mit Terrajobs finden Sie passende Geojobs in Deutschland. Egal ob GIS, Geographie, Geologie oder auch Software Entwicklung. Wir begleiten Sie in Ihrer Geo-Karriere.", :property => "og:description"}/
+        %meta{:content => "https://terrajobs.de", :property => "og:url"}/
+        %meta{:content => "https://terrajobs.de/images/share-image.jpg", :property => "og:image"}/
+        %meta{:content => "1200", :property => "og:image:width"}/
+        %meta{:content => "1200", :property => "og:image:height"}/
+        %meta{:content => "https://terrajobs.de/images/apple-touch-icon.png", :property => "og:logo", :size => "180x180"}/
+        %title= "#{content_for(:title) =~ /Terrajobs(.+)/i ?  "#{yield(:title)}" :  "#{yield(:title) + " | Terrajobs"}" }"
+        %meta{name: "description", content: "#{yield_meta_tag(:description, "Mit Terrajobs finden Sie passende Geojobs in Deutschland. Egal ob GIS, Geographie, Geologie oder auch Software Entwicklung. Wir begleiten Sie in Ihrer Geo-Karriere.") }"}/
+        %meta{name: "keywords", content: "#{yield_meta_tag(:keywords, "GIS, Vermessung, Geographie, Geologie, Fernerkundung, Geoinformatik, Nachhaltigkeit, Jobsuche, Jobs, Job, Stellenangebot, Stellenanzeigen, Arbeit") }"}/
+        %link{:href => "https://terrajobs.de/images/apple-touch-icon.png", :rel => "apple-touch-icon", :sizes => "180x180"}/
+        %link{:href => "https://terrajobs.de/images/favicon-16x16.png", :rel => "icon", :sizes => "16x16", :type => "image/png"}/
+        %link{:href => "https://terrajobs.de/images/favicon-32x32.png", :rel => "icon", :sizes => "32x32", :type => "image/png"}/
+        = favicon_link_tag asset_path('favicon-32x32.png')
+        = csrf_meta_tags 
+        = csp_meta_tag
+        = stylesheet_link_tag "application", media: "all"
+        = javascript_include_tag "https://my.hellobar.com/56b18126aa7e25c88ff71e74cc52a2765f7a3dd5.js", :defer => "defer", :charset => "utf-8", :async => "async"
+        = canonical_tag
+        - if Rails.env.production?
+            %script{:async => "", :await => "", :src => "https://www.googletagmanager.com/gtag/js?id=UA-85998646-3"}
+            :javascript
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'UA-85998646-3');
+        %script{type: "application/ld+json"}
+            { "@context": "http://schema.org",
+            "@type": "Organization",
+            "name": "Terrajobs",
+            "url": "https://terrajobs.de",
+            "logo": "https://terrajobs.de/assets/terrajobs-logo-a182ef097293d0237b28741b787bbfd31228818901db223c30dfd4566011bd73.svg",
+            "foundingDate": "2019",
+            "founders": [
+            {
+            "@type": "Person",
+            "name": "Fabian Dahlke"
+            }],
+            "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "telephone": "[+49-176-56558419]",
+            "email": "contact@terrajobs.de"
+            },
+            "sameAs": [ 
+            "https://twitter.com/terrajobs_de"
+            ]}
+   
+    %body
+        = yield
+
