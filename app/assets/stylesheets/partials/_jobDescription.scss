@@ -23,6 +23,8 @@ $max-width: 65em;
         border-radius: 5px;
         margin-top: 9em;
         margin-bottom: 4em;
+        font-size: calc(100% + 0.1vw);
+        line-height: 1.8rem;
 
         ul {
             padding-left: 2em;
@@ -47,6 +49,7 @@ $max-width: 65em;
         padding: 0 8%;
         padding-top: 3em;
         padding-bottom: 4em;
+        font-size: calc(100% + 0.1vw);
 
         @media screen and (min-width: 65em) {
             position: -webkit-sticky;
