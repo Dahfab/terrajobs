@@ -13,12 +13,15 @@ class ApplicationController < ActionController::Base
     end
 
     def geojobs
+        render layout: "layouts/pages"
     end
 
     def impressum
+        render layout: "layouts/pages"
     end
 
     def datenschutz
+        render layout: "layouts/pages"
     end
 
     private

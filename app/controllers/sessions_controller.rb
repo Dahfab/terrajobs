@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 
-    def new 
+    def new
+        render layout: "layouts/pages" 
     end
 
     def create 
@@ -10,7 +11,7 @@ class SessionsController < ApplicationController
             flash[:notice] = "Erfolgreich eingeloggt"
         else
             flash[:notice] = "E-Mail oder Passwort falsch"
-            render :new
+            redirect_to backend_path
         end
     end
 
