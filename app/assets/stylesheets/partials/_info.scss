@@ -80,6 +80,43 @@ $max-width: 65em;
         }
     }
 
+    &__brands {
+        width: $page-width;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        margin: 0 auto;
+        color: #fff;
+
+        @media screen and (min-width: 30em) {
+            align-items: center;
+        }
+
+        @media screen and (min-width: 65em) {
+            margin-top: 4em;
+        }
+
+        p {
+            text-align: left;
+            max-width: 42em;
+
+            @media screen and (min-width: 30em) {
+                text-align: center;
+            }
+        }
+
+        img {
+            width: 15em;
+            margin-top: 1em;
+            margin-bottom: 5em;
+
+            @media screen and (min-width: 65em) {
+                margin-bottom: 1em;
+            }
+        }
+
+    }
+
     &__sponsoring {
         width: $page-width;
         display: flex;
