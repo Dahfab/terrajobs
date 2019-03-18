@@ -10,15 +10,18 @@
                 = link_to "Terrajobs", root_path
 
 .FormWrapper
-    %h1.h1 Geo-Job Stellenanzeige inserieren.
-    %p 
-        Alle Anzeigen können 
-        %u kostenlos 
-        veröffentlicht werden. Einfach untenstehendes Formular ausfüllen und absenden.
-    %p 
-        Gerne übertragen wir Ihre PDF Version auf unsere Plattform. Nehmen Sie hierzu einfach 
-        = mail_to "fabian.dahlke@gmail.com", "Kontakt" 
-        auf. 
+    %h1.h1 Jetzt Stellenanzeige inserieren.
+    %section.proof
+        .proof__grid
+            .proof__grid__item
+                Erreichen Sie über 500 Besucher / Monat
+            .proof__grid__item
+                Targetierte Zielgruppe
+            .proof__grid__item
+                Kostenlos veröffentlichen
+            .proof__grid__item
+                Bei Bedarf PDF Übertragung
+
     %section.form
         = form_for @job, validate: true do |f|
             .form__job
