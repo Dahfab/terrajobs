@@ -1,6 +1,11 @@
 = title "Stellenanzeige inserieren"
 = meta_tag :description, "Schalten Sie Ihre Stellenanzeige auf Terrajobs! Wir sind die Nr. 1 Anlaufstelle für Geo-Jobs und der perfekte Partner, um Ihren nächsten Mitarbeiter zu finden."
 
+%script 
+:javascript 
+    fbq('track', 'ViewContent', {
+        content_type: 'NewPosting',
+    });
 
 %header.header
     %nav#navigation.navigation

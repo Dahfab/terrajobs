@@ -1,6 +1,12 @@
 = title "Terrajobs - Die Jobbörse für Geojobs in Deutschland"
 = meta_tag :keywords, "Jobsuche, Jobs, Geo-Jobs, GIS, Geographie, Geologie, Vermessung, Geoinformatik, Suchmaschine für Stellenangebote, Stellenangebot, Job, Jobbörse, Stellenanzeigen, Jobs suchen, Karriere, Arbeit, Jobs finden, Stellenanzeige, Stellenmarkt, Anstellung, Arbeit"
 
+%script 
+:javascript 
+    fbq('track', 'ViewContent', {
+      content_type: 'Indexpage',
+    });
+
 - if flash[:notice]
     %h2.h2--notice= flash[:notice]
 
