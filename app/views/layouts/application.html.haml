@@ -59,9 +59,9 @@
                 'https://connect.facebook.net/en_US/fbevents.js');
                 fbq('init', '473355056389833');
                 fbq('track', 'PageView');
-                <noscript><img height="1" width="1" style="display:none"
-                    src="https://www.facebook.com/tr?id=473355056389833&ev=PageView&noscript=1"
-                /></noscript>
+            %noscript
+            %img{src: "https://www.facebook.com/tr?id=473355056389833&ev=PageView&noscript=1", height:"1", width:"1", style:"display:none"} 
+                
 
         %script{type: "application/ld+json"}
             { "@context": "http://schema.org",
